@@ -1,0 +1,587 @@
+/* ============================
+   PALETA Y TEMAS
+   ============================ */
+
+:root {
+  --poke-blue: #2563eb;          /* azul principal */
+  --poke-blue-soft: #1d4ed8;
+  --poke-blue-dark: #0b1120;     /* navbar dark */
+  --poke-yellow: #facc15;
+  --poke-yellow-soft: #fde047;
+  --surface-light: #f3f4f6;
+  --surface-dark: #020617;
+  --text-light: #e5e7eb;
+  --text-dark: #0f172a;
+}
+
+/* Tema claro */
+html[data-bs-theme="light"] {
+  --bs-body-bg: var(--surface-light);
+  --bs-body-color: var(--text-dark);
+  --bs-card-bg: #ffffff;
+  --bs-card-border-color: rgba(15, 23, 42, 0.06);
+}
+
+/* Tema oscuro */
+html[data-bs-theme="dark"] {
+  --bs-body-bg: var(--surface-dark);
+  --bs-body-color: var(--text-light);
+  --bs-card-bg: #020617;
+  --bs-card-border-color: rgba(148, 163, 184, 0.25);
+}
+
+/* Body */
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.95rem;
+}
+
+/* Utilidades */
+.small { font-size: 0.8rem; }
+.xsmall { font-size: 0.75rem; }
+
+/* Cards */
+.card {
+  background-color: var(--bs-card-bg);
+  border-color: var(--bs-card-border-color);
+}
+
+/* Textos auxiliares */
+.form-text,
+.small,
+.text-muted {
+  color: inherit;
+  opacity: 0.8;
+}
+
+html[data-bs-theme="dark"] .invalid-feedback {
+  color: #fecaca;
+}
+
+/* Inputs coherentes */
+.form-control,
+.form-select {
+  background-color: var(--bs-card-bg);
+  color: var(--bs-body-color);
+  border-color: rgba(148, 163, 184, 0.6);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--poke-blue);
+  box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.35);
+}
+
+/* Input-group base */
+.input-group-text {
+  background-color: rgba(148, 163, 184, 0.12);
+  border-color: rgba(148, 163, 184, 0.6);
+  color: var(--bs-body-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html[data-bs-theme="dark"] .input-group-text {
+  background-color: rgba(15, 23, 42, 0.9);
+  border-color: rgba(148, 163, 184, 0.6);
+  color: #e5e7eb;
+}
+
+/* ============================
+   NAVBARS (REGISTRO/LOGIN + INDEX)
+   ============================ */
+
+/* Navbar PokeMarket (Registro / Login) */
+.navbar-poke {
+  background: linear-gradient(90deg, var(--poke-blue-soft), var(--poke-blue));
+}
+
+.navbar-poke .navbar-brand,
+.navbar-poke .navbar-brand span,
+.navbar-poke .nav-link,
+.navbar-poke .form-check-label,
+.navbar-poke .bi-sun-fill,
+.navbar-poke .bi-moon-stars-fill {
+  color: #f9fafb;
+}
+
+.navbar-poke .form-check-input {
+  cursor: pointer;
+  border-color: rgba(248, 250, 252, 0.6);
+  background-color: transparent;
+}
+
+.navbar-poke .form-check-input:checked {
+  background-color: var(--poke-yellow);
+  border-color: var(--poke-yellow);
+}
+
+/* Navbar principal Index (Sanaball) */
+.navbar-main {
+  background: radial-gradient(circle at top left, #1d283a 0, var(--poke-blue-dark) 45%, #020617 100%);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+  backdrop-filter: blur(18px);
+}
+
+/* Animación sutil al hacer scroll si la fijaras */
+.navbar-main.navbar-scrolled {
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.65);
+}
+
+/* Marca */
+.navbar-main .brand-text {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #f9fafb;
+}
+
+/* Logo Sanaball (similar master/superball pero con S) */
+.sanaball-logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #ffffff 0, #ffffff 40%, #22c55e 41%, #16a34a 100%);
+  border: 2px solid #020617;
+  position: relative;
+  display: inline-block;
+}
+
+.sanaball-logo::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  right: -2px;
+  height: 4px;
+  background: #020617;
+  transform: translateY(-50%);
+}
+
+.sanaball-logo::after {
+  content: "S";
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  font-weight: 800;
+  color: #f9fafb;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+}
+
+/* Links navbar Index */
+.navbar-main .nav-link {
+  position: relative;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #cbd5f5;
+  padding-inline: 0.9rem;
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+  border-radius: 999px;
+  transition: color 0.18s ease, background-color 0.18s ease, transform 0.15s ease;
+}
+
+/* Subrayado animado tipo pill */
+.navbar-main .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 16%;
+  right: 16%;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--poke-yellow), #f97316);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.18s ease;
+  opacity: 0.9;
+}
+
+.navbar-main .nav-link:hover {
+  color: #f9fafb;
+  background-color: rgba(148, 163, 184, 0.14);
+  transform: translateY(-1px);
+}
+
+.navbar-main .nav-link:hover::after,
+.navbar-main .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.navbar-main .nav-link.active {
+  color: #f9fafb;
+  background-color: rgba(37, 99, 235, 0.35);
+}
+
+/* Botón “Registrarse” en navbar Index */
+.navbar-main .btn-outline-light.btn-sm {
+  font-size: 0.85rem;
+  padding-block: 0.3rem;
+  padding-inline: 0.9rem;
+  border-radius: 999px;
+  border-width: 1px;
+  border-color: rgba(248, 250, 252, 0.6);
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.15s ease;
+}
+
+.navbar-main .btn-outline-light.btn-sm:hover {
+  background-color: rgba(248, 250, 252, 0.08);
+  color: #f9fafb;
+  transform: translateY(-1px);
+}
+
+/* Toggle hamburguesa (3 rayas) */
+.navbar-main .navbar-toggler {
+  border: none;
+  padding: 0.25rem 0.4rem;
+  border-radius: 999px;
+  background-color: rgba(15, 23, 42, 0.3);
+  transition: background-color 0.18s ease, transform 0.15s ease;
+}
+
+.navbar-main .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.15rem rgba(37, 99, 235, 0.65);
+}
+
+.navbar-main .navbar-toggler:hover {
+  background-color: rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
+}
+
+/* Icono hamburguesa personalizado */
+.navbar-main .navbar-toggler-icon {
+  background-image: none;
+  width: 1.3rem;
+  height: 1.3rem;
+  position: relative;
+  display: inline-block;
+}
+
+.navbar-main .navbar-toggler-icon::before,
+.navbar-main .navbar-toggler-icon::after,
+.navbar-main .navbar-toggler-icon span {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 999px;
+  background-color: #e5e7eb;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.navbar-main .navbar-toggler-icon::before {
+  top: 2px;
+}
+
+.navbar-main .navbar-toggler-icon::after {
+  bottom: 2px;
+}
+
+.navbar-main .navbar-toggler-icon span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Estado abierto simulando “X” */
+.navbar-main .navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-main .navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.navbar-main .navbar-toggler:not(.collapsed) .navbar-toggler-icon span {
+  opacity: 0;
+}
+
+/* Estado cerrado (collapsed) */
+.navbar-main .navbar-toggler.collapsed .navbar-toggler-icon::before,
+.navbar-main .navbar-toggler.collapsed .navbar-toggler-icon::after,
+.navbar-main .navbar-toggler.collapsed .navbar-toggler-icon span {
+  transform: none;
+  opacity: 1;
+}
+
+/* ============================
+   BOTONES GENERALES
+   ============================ */
+
+.btn-poke {
+  background-color: var(--poke-yellow) !important;
+  border-color: var(--poke-yellow) !important;
+  color: #1f2933 !important;
+  font-weight: 600;
+  transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease;
+}
+
+.btn-poke:hover,
+.btn-poke:focus {
+  background-color: var(--poke-yellow-soft) !important;
+  border-color: var(--poke-yellow-soft) !important;
+  color: #111827 !important;
+  box-shadow: 0 8px 18px rgba(250, 204, 21, 0.45);
+  transform: translateY(-1px);
+}
+
+/* Outline secundario coherente */
+.btn-outline-secondary {
+  border-width: 1px;
+}
+
+html[data-bs-theme="light"] .btn-outline-secondary {
+  color: #374151;
+  border-color: #9ca3af;
+}
+
+html[data-bs-theme="dark"] .btn-outline-secondary {
+  color: #e5e7eb;
+  border-color: #4b5563;
+}
+
+html[data-bs-theme="dark"] .btn-outline-secondary:hover {
+  background-color: #4b5563;
+  border-color: #6b7280;
+}
+
+/* Botón Google (login) */
+.btn-google {
+  background-color: #ffffff;
+  border-color: #dadce0;
+  color: #3c4043;
+  font-weight: 500;
+  transition: background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-google:hover {
+  background-color: #f7f8fc;
+  border-color: #dadce0;
+  color: #202124;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.16);
+}
+
+.btn-google i {
+  color: var(--google-blue);
+}
+
+/* ============================
+   LOGOS REGISTRO/LOGIN
+   ============================ */
+
+.superball-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff 0, #ffffff 40%, #3c5aa6 41%, #3c5aa6 100%);
+  border: 2px solid #000;
+  position: relative;
+  display: inline-block;
+}
+
+.superball-logo::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -2px;
+  right: -2px;
+  height: 4px;
+  background: #000;
+  transform: translateY(-50%);
+}
+
+.superball-logo::after {
+  content: "S";
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 2px #000;
+}
+
+.pokeball-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid #000;
+  position: relative;
+  display: inline-block;
+  background: transparent;
+}
+
+.pokeball-logo::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -3px;
+  right: -3px;
+  height: 3px;
+  background: #000;
+  transform: translateY(-50%);
+}
+
+.pokeball-logo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: transparent;
+  border: 3px solid #000;
+  transform: translate(-50%, -50%);
+}
+
+/* ============================
+   FONDO POKEBALLS (LOGIN/REGISTRO)
+   ============================ */
+
+.bg-pokeballs {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--bs-body-bg);
+  background-image:
+    radial-gradient(circle, transparent 0, transparent 18px, rgba(0,0,0,0.06) 18px, rgba(0,0,0,0.06) 19px, transparent 19px);
+  background-size: 140px 140px;
+}
+
+.bg-pokeballs::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,0.06) 0, rgba(0,0,0,0.06) 40%, transparent 40%);
+  background-repeat: repeat;
+  background-size: 140px 140px;
+  background-position: 0 70px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.bg-pokeballs::after {
+  content: "";
+  position: fixed;
+  bottom: -40px;
+  right: -20px;
+  width: 180px;
+  height: 180px;
+  border: 3px solid rgba(0,0,0,0.08);
+  border-radius: 45% 55% 40% 60%;
+  box-shadow:
+    -30px -60px 0 -120px rgba(0,0,0,0.08),
+    -60px -90px 0 -120px rgba(0,0,0,0.08);
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+
+/* Cabecera amarilla de la card */
+.card-header-poke {
+  background-color: var(--poke-yellow);
+  color: #111827;
+}
+
+/* ============================
+   AVATARES
+   ============================ */
+
+.avatar-option {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.avatar-option:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 0 3px rgba(255, 203, 5, 0.4);
+  border-color: rgba(0,0,0,0.25);
+}
+
+.avatar-option.selected {
+  box-shadow: 0 0 0 3px rgba(255, 203, 5, 0.9);
+  border-color: rgba(0,0,0,0.6);
+  transform: translateY(-3px);
+}
+
+.avatar-preview {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.15);
+}
+
+/* Avatar navbar (Index/Login) */
+.avatar-navbar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(248, 250, 252, 0.8);
+}
+
+/* Botón perfil navbar */
+.btn-profile {
+  background-color: transparent;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: #e5e7eb;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
+}
+
+.btn-profile:hover,
+.btn-profile:focus {
+  background-color: rgba(15, 23, 42, 0.55);
+  border-color: rgba(248, 250, 252, 0.7);
+  color: #f9fafb;
+  transform: translateY(-1px);
+}
+
+/* Dropdown perfil */
+.dropdown-menu {
+  font-size: 0.85rem;
+  border-radius: 0.6rem;
+  border-color: rgba(148, 163, 184, 0.25);
+}
+
+/* ============================
+   INPUT FILE ICONO IMAGEN (REGISTRO)
+   ============================ */
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-circle i {
+  font-size: 1.2rem;
+}
+
+/* Ajuste de altura del file input */
+.input-group .form-control[type="file"] {
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+}
+
