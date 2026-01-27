@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="es" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <title>PokeMarket - Perfil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-main shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="../Index.html">
+      <img src="../img/Masterball.png" alt="Masterball" style="width: 32px; height: 32px;">
+      <span class="brand-text">PokeMarket</span>
+    </a>
+
+    <button class="navbar-toggler collapsed" type="button"
+            data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar" aria-expanded="false"
+            aria-label="Mostrar navegación">
+      <span class="navbar-toggler-icon">
+        <span></span>
+      </span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-3 nav-links">
+        <li class="nav-item">
+          <a class="nav-link" href="../Index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Mercado</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Colección</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Perfil</a>
+        </li>
+      </ul>
+
+      <div class="ms-auto d-flex align-items-center gap-3 flex-wrap justify-content-end">
+        <!-- Switch tema -->
+        <div class="d-flex align-items-center gap-2 order-1 order-lg-0">
+          <i class="bi bi-sun small text-warning"></i>
+          <div class="form-check form-switch mb-0">
+            <input class="form-check-input theme-switch"
+                   type="checkbox"
+                   id="darkModeSwitch"
+                   aria-label="Cambiar entre modo claro y oscuro">
+          </div>
+          <i class="bi bi-moon-stars small text-secondary-emphasis"></i>
+        </div>
+
+        <!-- Dropdown perfil -->
+        <div class="dropdown order-0 order-lg-1">
+          <button class="btn btn-profile"
+                  type="button"
+                  id="profileDropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+            <img src="img/avatars/pokeball.png"
+                 alt="Avatar"
+                 class="avatar-navbar me-2"
+                 id="navbarAvatar">
+            <span class="d-none d-sm-inline user-name" id="navbarUserName">
+              Entrenador
+            </span>
+            <i class="bi bi-caret-down-fill ms-1 small d-none d-sm-inline"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end shadow-sm"
+              aria-labelledby="profileDropdown">
+            <li class="px-3 py-2">
+              <div class="d-flex align-items-center">
+                <img src="img/avatars/pokeball.png"
+                     alt="Avatar"
+                     class="avatar-navbar me-2"
+                     id="dropdownAvatar">
+                <div class="min-w-0">
+                  <div class="fw-semibold small text-truncate"
+                       id="dropdownUserName">Entrenador</div>
+                  <div class="text-muted xsmall text-truncate"
+                       id="dropdownUserEmail">
+                    entrenador@pokemarket.com
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li><hr class="dropdown-divider my-1"></li>
+            <li>
+              <a class="dropdown-item small" href="Perfil.html">
+                <i class="bi bi-person-badge me-2"></i>Ver perfil
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item small" href="InicioSesion.html" id="logoutLink">
+                <i class="bi bi-box-arrow-right me-2"></i>Cerrar sesión
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTENIDO PERFIL -->
+<main class="py-4">
+  <div class="container">
+
+    <!-- CABECERA PERFIL -->
+    <section class="profile-header card border-0 shadow-sm mb-4">
+      <div class="card-body">
+        <div class="row g-3 align-items-center">
+          <!-- Avatar grande -->
+          <div class="col-auto">
+            <div class="profile-avatar-wrapper">
+              <img src="img/avatars/pokeball.png"
+                   alt="Avatar perfil"
+                   class="profile-avatar"
+                   id="profileAvatar">
+            </div>
+          </div>
+
+          <!-- Nombre + bio + acciones -->
+          <div class="col">
+            <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+              <h1 class="h4 mb-0 me-2" id="profileName">Entrenador</h1>
+              <span class="badge bg-poke-username">@entrenador</span>
+            </div>
+
+            <p class="mb-2 text-muted small" id="profileEmail">
+              entrenador@pokemarket.com
+            </p>
+
+            <p class="mb-3 profile-bio small" id="profileBio">
+              Coleccionista de cartas Pokémon, cazador de grails y adicto a las ruletas legendarias.
+            </p>
+
+            <div class="d-flex flex-wrap align-items-center gap-3 mb-3 profile-stats">
+              <div class="profile-stat">
+                <span class="profile-stat-number" id="statCartasVenta">0</span>
+                <span class="profile-stat-label">Cartas en venta</span>
+              </div>
+              <div class="profile-stat">
+                <span class="profile-stat-number" id="statSeguidores">0</span>
+                <span class="profile-stat-label">Seguidores</span>
+              </div>
+              <div class="profile-stat">
+                <span class="profile-stat-number" id="statSiguiendo">0</span>
+                <span class="profile-stat-label">Siguiendo</span>
+              </div>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2">
+              <button class="btn btn-poke btn-sm" data-bs-toggle="modal" data-bs-target="#editarPerfilModal">
+                <i class="bi bi-pencil-square me-1"></i>Editar perfil
+              </button>
+              <button class="btn btn-outline-secondary btn-sm">
+                <i class="bi bi-share me-1"></i>Compartir perfil
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABS PERFIL -->
+    <section class="profile-tabs card border-0 shadow-sm">
+      <div class="card-header border-0 bg-transparent">
+        <ul class="nav nav-pills profile-nav-pills" id="profileTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="venta-tab" data-bs-toggle="pill"
+                    data-bs-target="#tab-venta" type="button" role="tab"
+                    aria-controls="tab-venta" aria-selected="true">
+              <i class="bi bi-shop-window me-1"></i>En venta
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="deseados-tab" data-bs-toggle="pill"
+                    data-bs-target="#tab-deseados" type="button" role="tab"
+                    aria-controls="tab-deseados" aria-selected="false">
+              <i class="bi bi-stars me-1"></i>Deseados
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="favoritas-tab" data-bs-toggle="pill"
+                    data-bs-target="#tab-favoritas" type="button" role="tab"
+                    aria-controls="tab-favoritas" aria-selected="false">
+              <i class="bi bi-heart-fill me-1"></i>Favoritas
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-body">
+        <div class="tab-content" id="profileTabsContent">
+          <!-- TAB EN VENTA -->
+          <div class="tab-pane fade show active" id="tab-venta" role="tabpanel" aria-labelledby="venta-tab">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h2 class="h6 mb-0">Cartas en venta</h2>
+              <button class="btn btn-sm btn-poke" data-bs-toggle="modal" data-bs-target="#nuevaCartaModal">
+                <i class="bi bi-plus-lg me-1"></i>Añadir carta
+              </button>
+            </div>
+            <div class="row g-3" id="gridCartasVenta">
+              <!-- Plantilla de carta en venta (clonada por JS) -->
+              <div class="col-6 col-md-4 col-lg-3 d-none" id="plantillaCartaVenta">
+                <article class="card card-carta h-100 border-0">
+                  <div class="card-img-top carta-img-placeholder d-flex align-items-center justify-content-center">
+                    <span class="text-muted xsmall">Imagen carta</span>
+                  </div>
+                  <div class="card-body p-2">
+                    <h3 class="card-title mb-1 small carta-nombre">Nombre carta</h3>
+                    <p class="mb-1 xsmall text-muted carta-rareza">Rareza</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <span class="fw-semibold text-success carta-precio">0,00 €</span>
+                      <button class="btn btn-outline-secondary btn-xs" type="button">
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <!-- /plantilla -->
+              <p class="text-muted small mb-0" id="textoSinCartasVenta">
+                Todavía no has puesto ninguna carta a la venta. Usa el botón “Añadir carta” para empezar.
+              </p>
+            </div>
+          </div>
+
+          <!-- TAB DESEADOS -->
+          <div class="tab-pane fade" id="tab-deseados" role="tabpanel" aria-labelledby="deseados-tab">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h2 class="h6 mb-0">Lista de deseados</h2>
+            </div>
+            <div class="row g-3" id="gridDeseados">
+              <p class="text-muted small mb-0">
+                Aún no tienes cartas en tu lista de deseados. Marca cartas de otros usuarios para que aparezcan aquí.
+              </p>
+            </div>
+          </div>
+
+          <!-- TAB FAVORITAS -->
+          <div class="tab-pane fade" id="tab-favoritas" role="tabpanel" aria-labelledby="favoritas-tab">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h2 class="h6 mb-0">Cartas favoritas</h2>
+            </div>
+            <div class="row g-3" id="gridFavoritas">
+              <p class="text-muted small mb-0">
+                Marca cartas como favoritas para verlas aquí de forma rápida.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- MODAL EDITAR PERFIL -->
+<div class="modal fade" id="editarPerfilModal" tabindex="-1" aria-labelledby="editarPerfilModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content profile-modal">
+      <div class="modal-header border-0">
+        <h1 class="modal-title h5" id="editarPerfilModalLabel">Editar perfil</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formEditarPerfil" novalidate>
+          <!-- Avatar centrado + 2 opciones -->
+          <div class="mb-3 text-center">
+            <div class="profile-avatar-wrapper mb-2 mx-auto">
+              <img src="img/avatars/pokeball.png"
+                   alt="Avatar"
+                   class="profile-avatar"
+                   id="editarAvatarPreview">
+            </div>
+            <div class="d-flex justify-content-center gap-2 flex-wrap">
+              <!-- Cambiar foto desde galería -->
+              <label class="btn btn-outline-secondary btn-sm mb-0">
+                <i class="bi bi-image me-1"></i>Galería
+                <input type="file" class="d-none" id="editarAvatarInput" accept="image/*">
+              </label>
+
+              <!-- Cambiar foto predeterminada -->
+              <button type="button"
+                      class="btn btn-outline-secondary btn-sm mb-0"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#avatarPredeterminadoCollapse"
+                      aria-expanded="false"
+                      aria-controls="avatarPredeterminadoCollapse">
+                <i class="bi bi-emoji-smile me-1"></i>Avatar predeterminado
+              </button>
+            </div>
+
+            <!-- Selección de avatares predeterminados -->
+            <div class="collapse mt-3" id="avatarPredeterminadoCollapse">
+              <div class="row g-3 justify-content-center">
+                <div class="col-3 d-flex justify-content-center">
+                  <img src="../img/avatars/pikachu.jpg" alt="Pikachu" class="avatar-option" data-avatar-default="../img/avatars/pikachu.jpg">
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                  <img src="../img/avatars/Bulbasaur.jpeg" alt="Bulbasaur" class="avatar-option" data-avatar-default="../img/avatars/Bulbasaur.jpeg">
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                  <img src="../img/avatars/charmander.jpg" alt="Charmander" class="avatar-option" data-avatar-default="../img/avatars/charmander.jpg">
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                  <img src="../img/avatars/squirtle.jpg" alt="Squirtle" class="avatar-option" data-avatar-default="../img/avatars/squirtle.jpg">
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                  <img src="../img/avatars/jigglipuff.jpg" alt="Jigglypuff" class="avatar-option" data-avatar-default="../img/avatars/jigglipuff.jpg">
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                  <img src="../img/avatars/meowth.jpeg" alt="Meowth" class="avatar-option" data-avatar-default="../img/avatars/meowth.jpeg">
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                  <img src="../img/avatars/psyduck.jpeg" alt="Psyduck" class="avatar-option" data-avatar-default="../img/avatars/psyduck.jpeg">
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                  <img src="../img/avatars/snorlax.png" alt="Snorlax" class="avatar-option" data-avatar-default="../img/avatars/snorlax.png">
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                  <img src="../img/avatars/eevee.jpg" alt="Eevee" class="avatar-option" data-avatar-default="../img/avatars/eevee.jpg">
+                </div>
+                <div class="col-3 d-flex justify-content-center">
+                  <img src="../img/avatars/pokeball.png" alt="Pokeball" class="avatar-option" data-avatar-default="../img/avatars/pokeball.png">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="editarNombre" class="form-label small">Nombre</label>
+            <input type="text" class="form-control form-control-sm" id="editarNombre" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="editarBio" class="form-label small">Descripción</label>
+            <textarea class="form-control form-control-sm" id="editarBio" rows="3"
+                      placeholder="Cuenta algo sobre ti como entrenador Pokémon..."></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label for="editarEmail" class="form-label small">Correo electrónico</label>
+            <input type="email"
+                   class="form-control form-control-sm"
+                   id="editarEmail"
+                   required
+                   placeholder="tunombre@correo.com">
+            <div class="invalid-feedback xsmall">
+              Introduce un correo electrónico válido.
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-poke btn-sm" id="btnGuardarPerfil">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL NUEVA CARTA EN VENTA -->
+<div class="modal fade" id="nuevaCartaModal" tabindex="-1" aria-labelledby="nuevaCartaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content profile-modal">
+      <div class="modal-header border-0">
+        <h1 class="modal-title h5" id="nuevaCartaModalLabel">Añadir carta en venta</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formNuevaCarta" novalidate>
+          <div class="mb-3">
+            <label for="cartaNombre" class="form-label small">Nombre de la carta</label>
+            <input type="text" class="form-control form-control-sm" id="cartaNombre" required>
+          </div>
+          <div class="mb-3">
+            <label for="cartaRareza" class="form-label small">Rareza</label>
+            <input type="text" class="form-control form-control-sm" id="cartaRareza"
+                   placeholder="Ej: Ultra Rara, Secret Rare..." required>
+          </div>
+          <div class="mb-3">
+            <label for="cartaPrecio" class="form-label small">Precio (€)</label>
+            <input type="number" class="form-control form-control-sm" id="cartaPrecio"
+                   min="0" step="0.01" required>
+          </div>
+          <div class="mb-3">
+            <label for="cartaImagen" class="form-label small">Imagen (opcional)</label>
+            <input type="file" class="form-control form-control-sm" id="cartaImagen" accept="image/*">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-poke btn-sm" id="btnGuardarCarta">Añadir carta</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Script perfil -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const html = document.documentElement;
+  const switchElement = document.getElementById('darkModeSwitch');
+
+  // Tema guardado
+  const savedTheme = localStorage.getItem('bsTheme') || 'light';
+  html.setAttribute('data-bs-theme', savedTheme);
+  if (switchElement) {
+    switchElement.checked = savedTheme === 'dark';
+    switchElement.addEventListener('change', function () {
+      const theme = this.checked ? 'dark' : 'light';
+      html.setAttribute('data-bs-theme', theme);
+      localStorage.setItem('bsTheme', theme);
+    });
+  }
+
+  // --- DATOS USUARIO ---
+  const defaultName   = 'Entrenador';
+  const defaultEmail  = 'entrenador@pokemarket.com';
+  const defaultAvatar = 'img/avatars/pokeball.png';
+  const defaultBio    = 'Coleccionista de cartas Pokémon, cazador de grails y adicto a las ruletas legendarias.';
+
+  const name   = localStorage.getItem('pm_user_name')   || defaultName;
+  const email  = localStorage.getItem('pm_user_email')  || defaultEmail;
+  const avatar = localStorage.getItem('pm_user_avatar') || defaultAvatar;
+  const bio    = localStorage.getItem('pm_user_bio')    || defaultBio;
+
+  // Navbar
+  const navbarUserName    = document.getElementById('navbarUserName');
+  const dropdownUserName  = document.getElementById('dropdownUserName');
+  const dropdownUserEmail = document.getElementById('dropdownUserEmail');
+  const navbarAvatar      = document.getElementById('navbarAvatar');
+  const dropdownAvatar    = document.getElementById('dropdownAvatar');
+
+  if (navbarUserName)    navbarUserName.textContent = name;
+  if (dropdownUserName)  dropdownUserName.textContent = name;
+  if (dropdownUserEmail) dropdownUserEmail.textContent = email;
+  if (navbarAvatar)      navbarAvatar.src = avatar;
+  if (dropdownAvatar)    dropdownAvatar.src = avatar;
+
+  // Cabecera perfil
+  const profileName   = document.getElementById('profileName');
+  const profileEmail  = document.getElementById('profileEmail');
+  const profileAvatar = document.getElementById('profileAvatar');
+  const profileBio    = document.getElementById('profileBio');
+
+  if (profileName)   profileName.textContent = name;
+  if (profileEmail)  profileEmail.textContent = email;
+  if (profileAvatar) profileAvatar.src = avatar;
+  if (profileBio)    profileBio.textContent = bio;
+
+  // Handler estilo @user (simple, basado en el correo)
+  const handlerBadge = document.querySelector('.badge.bg-poke-username');
+  if (handlerBadge) {
+    const base = email.split('@')[0] || 'entrenador';
+    handlerBadge.textContent = '@' + base;
+  }
+
+  // --- EDITAR PERFIL (MODAL) ---
+  const editarNombre  = document.getElementById('editarNombre');
+  const editarEmail   = document.getElementById('editarEmail');
+  const editarBio     = document.getElementById('editarBio');
+  const editarAvatarPreview = document.getElementById('editarAvatarPreview');
+  const editarAvatarInput   = document.getElementById('editarAvatarInput');
+  const btnGuardarPerfil    = document.getElementById('btnGuardarPerfil');
+
+  if (editarNombre) editarNombre.value = name;
+  if (editarEmail)  editarEmail.value  = email;
+  if (editarBio)    editarBio.value    = bio;
+  if (editarAvatarPreview) editarAvatarPreview.src = avatar;
+
+  // Previsualizar avatar cargado desde galería
+  if (editarAvatarInput) {
+    editarAvatarInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(ev) {
+        const dataUrl = ev.target.result;
+        if (editarAvatarPreview) editarAvatarPreview.src = dataUrl;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  // Seleccionar avatar predeterminado
+  const avatarDefaultOptions = document.querySelectorAll('[data-avatar-default]');
+  avatarDefaultOptions.forEach(img => {
+    img.addEventListener('click', () => {
+      const selectedUrl = img.getAttribute('data-avatar-default');
+      if (!selectedUrl) return;
+
+      avatarDefaultOptions.forEach(i => i.classList.remove('selected'));
+      img.classList.add('selected');
+
+      if (editarAvatarPreview) editarAvatarPreview.src = selectedUrl;
+    });
+  });
+
+  // Guardar cambios perfil con validación de email
+  if (btnGuardarPerfil) {
+    btnGuardarPerfil.addEventListener('click', () => {
+      const form = document.getElementById('formEditarPerfil');
+      if (form && !form.checkValidity()) {
+        form.classList.add('was-validated');
+        return;
+      }
+
+      const nuevoNombre = editarNombre ? editarNombre.value.trim() : name;
+      const nuevoEmail  = editarEmail ? editarEmail.value.trim() : email;
+      const nuevaBio    = editarBio ? editarBio.value.trim() : bio;
+      let nuevoAvatar   = avatar;
+
+      if (editarAvatarPreview && editarAvatarPreview.src) {
+        nuevoAvatar = editarAvatarPreview.src;
+      }
+
+      localStorage.setItem('pm_user_name',  nuevoNombre || defaultName);
+      localStorage.setItem('pm_user_email', nuevoEmail  || defaultEmail);
+      localStorage.setItem('pm_user_bio',   nuevaBio    || defaultBio);
+      localStorage.setItem('pm_user_avatar', nuevoAvatar || defaultAvatar);
+
+      if (navbarUserName)    navbarUserName.textContent = nuevoNombre || defaultName;
+      if (dropdownUserName)  dropdownUserName.textContent = nuevoNombre || defaultName;
+      if (dropdownUserEmail) dropdownUserEmail.textContent = nuevoEmail || defaultEmail;
+      if (navbarAvatar)      navbarAvatar.src = nuevoAvatar || defaultAvatar;
+      if (dropdownAvatar)    dropdownAvatar.src = nuevoAvatar || defaultAvatar;
+      if (profileName)       profileName.textContent = nuevoNombre || defaultName;
+      if (profileEmail)      profileEmail.textContent = nuevoEmail || defaultEmail;
+      if (profileAvatar)     profileAvatar.src = nuevoAvatar || defaultAvatar;
+      if (profileBio)        profileBio.textContent = nuevaBio || defaultBio;
+
+      if (handlerBadge) {
+        const base = (nuevoEmail || defaultEmail).split('@')[0] || 'entrenador';
+        handlerBadge.textContent = '@' + base;
+      }
+
+      const modalEl = document.getElementById('editarPerfilModal');
+      const modalInstance = bootstrap.Modal.getInstance(modalEl);
+      modalInstance.hide();
+    });
+  }
+
+  // --- CARTAS EN VENTA (localStorage) ---
+  const gridCartasVenta      = document.getElementById('gridCartasVenta');
+  const plantillaCartaVenta  = document.getElementById('plantillaCartaVenta');
+  const textoSinCartasVenta  = document.getElementById('textoSinCartasVenta');
+  const btnGuardarCarta      = document.getElementById('btnGuardarCarta');
+  const cartaNombreInput     = document.getElementById('cartaNombre');
+  const cartaRarezaInput     = document.getElementById('cartaRareza');
+  const cartaPrecioInput     = document.getElementById('cartaPrecio');
+  const cartaImagenInput     = document.getElementById('cartaImagen');
+  const statCartasVenta      = document.getElementById('statCartasVenta');
+
+  function cargarCartasVenta() {
+    if (!gridCartasVenta || !plantillaCartaVenta) return;
+    const cartasGuardadas = JSON.parse(localStorage.getItem('pm_cards_sale') || '[]');
+
+    gridCartasVenta.querySelectorAll('.col-6').forEach(col => {
+      if (col !== plantillaCartaVenta) col.remove();
+    });
+
+    if (cartasGuardadas.length === 0) {
+      if (textoSinCartasVenta) textoSinCartasVenta.classList.remove('d-none');
+    } else {
+      if (textoSinCartasVenta) textoSinCartasVenta.classList.add('d-none');
+      cartasGuardadas.forEach(c => {
+        const clone = plantillaCartaVenta.cloneNode(true);
+        clone.id = '';
+        clone.classList.remove('d-none');
+        const nombreEl = clone.querySelector('.carta-nombre');
+        const rarezaEl = clone.querySelector('.carta-rareza');
+        const precioEl = clone.querySelector('.carta-precio');
+        const imgPlaceholder = clone.querySelector('.carta-img-placeholder');
+
+        if (nombreEl) nombreEl.textContent = c.nombre;
+        if (rarezaEl) rarezaEl.textContent = c.rareza;
+        if (precioEl) precioEl.textContent = parseFloat(c.precio).toFixed(2) + ' €';
+
+        if (imgPlaceholder && c.imagenDataUrl) {
+          imgPlaceholder.innerHTML = '';
+          const img = document.createElement('img');
+          img.src = c.imagenDataUrl;
+          img.alt = c.nombre;
+          img.className = 'carta-img-real';
+          imgPlaceholder.appendChild(img);
+        }
+
+        gridCartasVenta.appendChild(clone);
+      });
+    }
+
+    if (statCartasVenta) statCartasVenta.textContent = cartasGuardadas.length;
+  }
+
+  cargarCartasVenta();
+
+  if (btnGuardarCarta) {
+    btnGuardarCarta.addEventListener('click', () => {
+      const nombre = cartaNombreInput.value.trim();
+      const rareza = cartaRarezaInput.value.trim();
+      const precio = cartaPrecioInput.value;
+
+      if (!nombre || !rareza || !precio) {
+        alert('Rellena nombre, rareza y precio.');
+        return;
+      }
+
+      const guardar = (imagenDataUrl) => {
+        const cartas = JSON.parse(localStorage.getItem('pm_cards_sale') || '[]');
+        cartas.push({ nombre, rareza, precio, imagenDataUrl });
+        localStorage.setItem('pm_cards_sale', JSON.stringify(cartas));
+        cartaNombreInput.value = '';
+        cartaRarezaInput.value = '';
+        cartaPrecioInput.value = '';
+        cartaImagenInput.value = '';
+        cargarCartasVenta();
+
+        const modalEl = document.getElementById('nuevaCartaModal');
+        const modalInstance = bootstrap.Modal.getInstance(modalEl);
+        modalInstance.hide();
+      };
+
+      const file = cartaImagenInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          guardar(ev.target.result);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        guardar(null);
+      }
+    });
+  }
+
+  // --- LOGOUT ---
+  const logoutLink = document.getElementById('logoutLink');
+  if (logoutLink) {
+    logoutLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.removeItem('pm_user_name');
+      localStorage.removeItem('pm_user_email');
+      localStorage.removeItem('pm_user_avatar');
+      localStorage.removeItem('pm_user_bio');
+      localStorage.removeItem('pm_cards_sale');
+      window.location.href = 'InicioSesion.html';
+    });
+  }
+});
+</script>
+
+</body>
+</html>
