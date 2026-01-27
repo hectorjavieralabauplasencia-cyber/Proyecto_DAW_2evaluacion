@@ -23,8 +23,8 @@
   <!-- NAVBAR PokeMarket + modo claro/oscuro -->
   <nav class="navbar navbar-expand-lg navbar-poke navbar-dark shadow-sm">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <span class="masterball-logo me-2"></span>
+      <a class="navbar-brand d-flex align-items-center" href="../Index.html">
+        <img src="../img/Masterball.png" alt="Masterball" style="width: 32px; height: 32px;" class="me-2">
         <span class="fw-bold">PokeMarket</span>
       </a>
 
@@ -47,7 +47,7 @@
 
       <!-- Logo + nombre -->
       <div class="card-header text-center bg-transparent border-0 mt-3">
-        <div class="pokeball-logo mb-2"></div>
+        <img src="../img/Masterball.png" alt="Masterball" style="width: 56px; height: 56px;" class="mb-2">
         <h4 class="fw-bold mb-0">PokeMarket</h4>
       </div>
 
@@ -206,7 +206,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     event.preventDefault();
     form.classList.remove('was-validated');
-    alert('Login correcto (simulado). Aquí redirigirías a Index.html o Home.html.');
+
+    // Simular login: guardar datos en localStorage
+    const userOrEmail = document.getElementById('userOrEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    // Aquí iría la validación real con el servidor
+    // Por ahora, simulamos con datos dummy
+    localStorage.setItem('pm_user_name', userOrEmail.split('@')[0] || 'Entrenador');
+    localStorage.setItem('pm_user_email', userOrEmail.includes('@') ? userOrEmail : userOrEmail + '@gmail.com');
+    localStorage.setItem('pm_user_avatar', '../img/avatars/pokeball.png');
+
+    // Redirigir a Index.html
+    window.location.href = '../Index.html';
   });
 
   // Placeholder para Google Identity
