@@ -3,15 +3,25 @@
    ============================ */
 
 :root {
-  --poke-blue: #2563eb;          /* azul principal */
+  --poke-blue: #2563eb;
   --poke-blue-soft: #1d4ed8;
-  --poke-blue-dark: #0b1120;     /* navbar dark */
+  --poke-blue-dark: #0b1120;
   --poke-yellow: #facc15;
   --poke-yellow-soft: #fde047;
   --surface-light: #f3f4f6;
   --surface-dark: #020617;
   --text-light: #e5e7eb;
   --text-dark: #0f172a;
+
+  /* Rarezas (colección y ruleta) */
+  --rarity-common: #9ca3af;
+  --rarity-uncommon: #22c55e;
+  --rarity-rare: #3b82f6;
+  --rarity-superrare: #8b5cf6;
+  --rarity-elite: #ec4899;
+  --rarity-epic: #f97316;
+  --rarity-mythic: #facc15;
+  --rarity-legendary: #fef08a;
 }
 
 /* Tema claro */
@@ -91,7 +101,7 @@ html[data-bs-theme="dark"] .input-group-text {
 }
 
 /* ============================
-   NAVBARS (REGISTRO/LOGIN + INDEX)
+   NAVBARS
    ============================ */
 
 /* Navbar PokeMarket (Registro / Login) */
@@ -119,19 +129,17 @@ html[data-bs-theme="dark"] .input-group-text {
   border-color: var(--poke-yellow);
 }
 
-/* Navbar principal Index (Sanaball) */
+/* Navbar principal Index */
 .navbar-main {
   background: radial-gradient(circle at top left, #1d283a 0, var(--poke-blue-dark) 45%, #020617 100%);
   border-bottom: 1px solid rgba(148, 163, 184, 0.35);
   backdrop-filter: blur(18px);
 }
 
-/* Animación sutil al hacer scroll si la fijaras */
 .navbar-main.navbar-scrolled {
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.65);
 }
 
-/* Marca */
 .navbar-main .brand-text {
   font-size: 1rem;
   font-weight: 600;
@@ -139,7 +147,7 @@ html[data-bs-theme="dark"] .input-group-text {
   color: #f9fafb;
 }
 
-/* Logo Sanaball (similar master/superball pero con S) */
+/* Logo antiguo Sanaball */
 .sanaball-logo {
   width: 30px;
   height: 30px;
@@ -186,7 +194,6 @@ html[data-bs-theme="dark"] .input-group-text {
   transition: color 0.18s ease, background-color 0.18s ease, transform 0.15s ease;
 }
 
-/* Subrayado animado tipo pill */
 .navbar-main .nav-link::after {
   content: "";
   position: absolute;
@@ -218,7 +225,7 @@ html[data-bs-theme="dark"] .input-group-text {
   background-color: rgba(37, 99, 235, 0.35);
 }
 
-/* Botón “Registrarse” en navbar Index */
+/* Botones navbar */
 .navbar-main .btn-outline-light.btn-sm {
   font-size: 0.85rem;
   padding-block: 0.3rem;
@@ -235,78 +242,46 @@ html[data-bs-theme="dark"] .input-group-text {
   transform: translateY(-1px);
 }
 
-/* Toggle hamburguesa (3 rayas) */
-.navbar-main .navbar-toggler {
-  border: none;
-  padding: 0.25rem 0.4rem;
+/* Créditos navbar */
+#globalCredits {
+  font-size: 0.85rem;
+  color: #f9fafb;
+}
+
+/* Botón perfil navbar */
+.btn-profile {
+  background-color: transparent;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: #e5e7eb;
+  padding: 3px 10px;
   border-radius: 999px;
-  background-color: rgba(15, 23, 42, 0.3);
-  transition: background-color 0.18s ease, transform 0.15s ease;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
 }
 
-.navbar-main .navbar-toggler:focus {
-  box-shadow: 0 0 0 0.15rem rgba(37, 99, 235, 0.65);
-}
-
-.navbar-main .navbar-toggler:hover {
-  background-color: rgba(37, 99, 235, 0.35);
+.btn-profile:hover,
+.btn-profile:focus {
+  background-color: rgba(15, 23, 42, 0.55);
+  border-color: rgba(248, 250, 252, 0.7);
+  color: #f9fafb;
   transform: translateY(-1px);
 }
 
-/* Icono hamburguesa personalizado */
-.navbar-main .navbar-toggler-icon {
-  background-image: none;
-  width: 1.3rem;
-  height: 1.3rem;
-  position: relative;
-  display: inline-block;
+.avatar-navbar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(248, 250, 252, 0.8);
 }
 
-.navbar-main .navbar-toggler-icon::before,
-.navbar-main .navbar-toggler-icon::after,
-.navbar-main .navbar-toggler-icon span {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 2px;
-  border-radius: 999px;
-  background-color: #e5e7eb;
-  transition: transform 0.18s ease, opacity 0.18s ease;
-}
-
-.navbar-main .navbar-toggler-icon::before {
-  top: 2px;
-}
-
-.navbar-main .navbar-toggler-icon::after {
-  bottom: 2px;
-}
-
-.navbar-main .navbar-toggler-icon span {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* Estado abierto simulando “X” */
-.navbar-main .navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.navbar-main .navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
-  transform: rotate(-45deg) translate(7px, -6px);
-}
-
-.navbar-main .navbar-toggler:not(.collapsed) .navbar-toggler-icon span {
-  opacity: 0;
-}
-
-/* Estado cerrado (collapsed) */
-.navbar-main .navbar-toggler.collapsed .navbar-toggler-icon::before,
-.navbar-main .navbar-toggler.collapsed .navbar-toggler-icon::after,
-.navbar-main .navbar-toggler.collapsed .navbar-toggler-icon span {
-  transform: none;
-  opacity: 1;
+.dropdown-menu {
+  font-size: 0.85rem;
+  border-radius: 0.6rem;
+  border-color: rgba(148, 163, 184, 0.25);
 }
 
 /* ============================
@@ -330,7 +305,6 @@ html[data-bs-theme="dark"] .input-group-text {
   transform: translateY(-1px);
 }
 
-/* Outline secundario coherente */
 .btn-outline-secondary {
   border-width: 1px;
 }
@@ -367,7 +341,7 @@ html[data-bs-theme="dark"] .btn-outline-secondary:hover {
 }
 
 .btn-google i {
-  color: var(--google-blue);
+  color: var(--poke-blue);
 }
 
 /* ============================
@@ -442,45 +416,22 @@ html[data-bs-theme="dark"] .btn-outline-secondary:hover {
 }
 
 /* ============================
-   FONDO POKEBALLS (LOGIN/REGISTRO)
-   ============================ */
+   FONDO GENERAL / LOGIN / PERFIL
+   ============================ */a
 
 .bg-pokeballs {
   position: relative;
   min-height: 100vh;
   background-color: var(--bs-body-bg);
-  background-image:
-    radial-gradient(circle, transparent 0, transparent 18px, rgba(0,0,0,0.06) 18px, rgba(0,0,0,0.06) 19px, transparent 19px);
-  background-size: 140px 140px;
+  background-image: url("../img/FondoClaro.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.bg-pokeballs::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(0,0,0,0.06) 0, rgba(0,0,0,0.06) 40%, transparent 40%);
-  background-repeat: repeat;
-  background-size: 140px 140px;
-  background-position: 0 70px;
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-.bg-pokeballs::after {
-  content: "";
-  position: fixed;
-  bottom: -40px;
-  right: -20px;
-  width: 180px;
-  height: 180px;
-  border: 3px solid rgba(0,0,0,0.08);
-  border-radius: 45% 55% 40% 60%;
-  box-shadow:
-    -30px -60px 0 -120px rgba(0,0,0,0.08),
-    -60px -90px 0 -120px rgba(0,0,0,0.08);
-  transform: rotate(-10deg);
-  pointer-events: none;
+html[data-bs-theme="dark"] .bg-pokeballs {
+  background-color: var(--bs-body-bg);
+  background-image: url("../img/FondoOscuro.png");
 }
 
 /* Cabecera amarilla de la card */
@@ -490,7 +441,7 @@ html[data-bs-theme="dark"] .btn-outline-secondary:hover {
 }
 
 /* ============================
-   AVATARES
+   AVATARES / PERFIL NAVBAR
    ============================ */
 
 .avatar-option {
@@ -523,65 +474,1299 @@ html[data-bs-theme="dark"] .btn-outline-secondary:hover {
   border: 2px solid rgba(0,0,0,0.15);
 }
 
-/* Avatar navbar (Index/Login) */
-.avatar-navbar {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid rgba(248, 250, 252, 0.8);
-}
-
-/* Botón perfil navbar */
-.btn-profile {
-  background-color: transparent;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  color: #e5e7eb;
-  padding: 3px 10px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
-}
-
-.btn-profile:hover,
-.btn-profile:focus {
-  background-color: rgba(15, 23, 42, 0.55);
-  border-color: rgba(248, 250, 252, 0.7);
-  color: #f9fafb;
-  transform: translateY(-1px);
-}
-
-/* Dropdown perfil */
-.dropdown-menu {
-  font-size: 0.85rem;
-  border-radius: 0.6rem;
-  border-color: rgba(148, 163, 184, 0.25);
-}
-
 /* ============================
-   INPUT FILE ICONO IMAGEN (REGISTRO)
+   PERFIL (PROFILE PAGE)
    ============================ */
 
-.icon-circle {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  padding: 0;
-  display: inline-flex;
+.profile-header {
+  background-color: var(--bs-card-bg);
+  border-radius: 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.35);
+}
+
+.profile-header-animated {
+  animation: profileFadeIn 0.6s ease-out forwards;
+  transform-origin: top center;
+  opacity: 0;
+}
+
+@keyframes profileFadeIn {
+  0%   { opacity: 0; transform: translateY(12px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.profile-avatar-wrapper {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 3px solid rgba(250, 204, 21, 0.85);
+  padding: 2px;
+  background: radial-gradient(circle at 30% 30%, #fef9c3 0, #facc15 40%, #f97316 100%);
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.icon-circle i {
-  font-size: 1.2rem;
+.profile-avatar-glow {
+  box-shadow:
+    0 0 24px rgba(250, 204, 21, 0.75),
+    0 8px 18px rgba(15, 23, 42, 0.85);
 }
 
-/* Ajuste de altura del file input */
-.input-group .form-control[type="file"] {
-  padding-top: 0.45rem;
-  padding-bottom: 0.45rem;
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #020617;
 }
 
+.badge.bg-poke-username {
+  background-color: rgba(15, 23, 42, 0.75);
+  color: #e5e7eb;
+  border-radius: 999px;
+}
+
+html[data-bs-theme="light"] .badge.bg-poke-username {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.profile-bio {
+  max-width: 480px;
+}
+
+.profile-stats {
+  gap: 1.25rem;
+}
+
+.profile-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-stat-number {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.profile-stat-label {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Botones cabecera perfil */
+.profile-btn-animated {
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-btn-animated::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 0 0, rgba(255,255,255,0.35), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateX(-30%);
+}
+
+.profile-btn-animated:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.profile-btn-ghost {
+  backdrop-filter: blur(10px);
+}
+
+/* Buscador en cabecera perfil */
+.profile-search-input {
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+#profileCardSearch {
+  border-radius: 999px;
+}
+
+/* Tabs perfil */
+.profile-tabs {
+  border-radius: 1rem;
+  background-color: var(--bs-card-bg);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.35);
+}
+
+.profile-tabs-animated {
+  animation: profileTabsIn 0.7s ease-out 0.1s forwards;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@keyframes profileTabsIn {
+  0%   { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.profile-nav-pills .nav-link {
+  border-radius: 999px;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  color: #6b7280;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease;
+}
+
+html[data-bs-theme="dark"] .profile-nav-pills .nav-link {
+  color: #e5e7eb;
+}
+
+.profile-nav-pills .nav-link.active {
+  background: linear-gradient(90deg, var(--poke-blue-soft), var(--poke-blue));
+  color: #f9fafb;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.45);
+  transform: translateY(-1px);
+}
+
+/* ============================
+   CARTAS / COLECCIÓN / PERFIL
+   ============================ */
+
+.card-carta {
+  background-color: var(--bs-card-bg);
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25);
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, border-color 0.15s ease-out;
+}
+
+.card-carta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.9);
+  border-color: var(--poke-yellow);
+}
+
+.card-carta-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-carta-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.18), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.card-carta:hover .card-carta-frame::before {
+  opacity: 1;
+}
+
+.card-carta-clickable,
+.card-perfil-venta-clickable,
+.card-favorite-clickable {
+  cursor: pointer;
+  transform-origin: center bottom;
+}
+
+.card-carta-clickable:hover,
+.card-perfil-venta-clickable:hover,
+.card-favorite-clickable:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.carta-img-placeholder {
+  background: radial-gradient(circle at top, #1f2937 0, #020617 60%, #020617 100%);
+  color: #9ca3af;
+  height: 150px;
+}
+
+.carta-img-real {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  background-color: #020617;
+  display: block;
+}
+
+/* Badges rareza colección */
+.badge.rarity-common {
+  background: rgba(156, 163, 175, 0.2);
+  color: #e5e7eb;
+  border: 1px solid rgba(156, 163, 175, 0.8);
+}
+
+.badge.rarity-uncommon {
+  background: rgba(34, 197, 94, 0.15);
+  color: #bbf7d0;
+  border: 1px solid rgba(34, 197, 94, 0.8);
+}
+
+.badge.rarity-rare {
+  background: rgba(59, 130, 246, 0.18);
+  color: #bfdbfe;
+  border: 1px solid rgba(59, 130, 246, 0.85);
+}
+
+.badge.rarity-superrare {
+  background: rgba(139, 92, 246, 0.18);
+  color: #ddd6fe;
+  border: 1px solid rgba(139, 92, 246, 0.9);
+}
+
+.badge.rarity-elite {
+  background: rgba(236, 72, 153, 0.18);
+  color: #f9a8d4;
+  border: 1px solid rgba(236, 72, 153, 0.9);
+}
+
+.badge.rarity-epic {
+  background: rgba(249, 115, 22, 0.18);
+  color: #fed7aa;
+  border: 1px solid rgba(249, 115, 22, 0.9);
+}
+
+.badge.rarity-mythic {
+  background: rgba(250, 204, 21, 0.25);
+  color: #fef3c7;
+  border: 1px solid rgba(250, 204, 21, 0.95);
+}
+
+.badge.rarity-legendary {
+  background: rgba(250, 250, 250, 0.25);
+  color: #fef3c7;
+  border: 1px solid rgba(250, 250, 250, 0.95);
+}
+
+/* ============================
+   CARD DETAIL MODALS (VENTA + FAVORITAS)
+   ============================ */
+
+.card-detail-modal {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: radial-gradient(circle at top, #020617 0, #020617 60%, #020617 100%);
+  color: #e5e7eb;
+}
+
+.card-detail-glow {
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle at 15% 0, rgba(250,204,21,0.35), transparent 60%);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.card-detail-rays {
+  position: absolute;
+  inset: -40%;
+  background-image: conic-gradient(
+    from 0deg,
+    rgba(250,250,250,0.0) 0deg,
+    rgba(250,250,250,0.28) 40deg,
+    rgba(250,250,250,0.0) 80deg
+  );
+  opacity: 0.5;
+  mix-blend-mode: screen;
+  animation: detailRaysRotate 16s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes detailRaysRotate {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.card-detail-frame {
+  border-radius: 0.9rem;
+  padding: 4px;
+  background: radial-gradient(circle at top, #111827 0, #020617 60%, #020617 100%);
+  box-shadow:
+    0 0 25px rgba(15, 23, 42, 0.9),
+    0 20px 40px rgba(0, 0, 0, 0.9);
+}
+
+.card-detail-image {
+  width: 100%;
+  border-radius: 0.7rem;
+  object-fit: contain;
+  background-color: #020617;
+}
+
+.card-detail-stat {
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.4rem;
+  background-color: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+/* ============================
+   CORAZÓN PROFESIONAL FAVORITAS
+   ============================ */
+
+.btn-favorite-heart {
+  background: transparent;
+  border: 1px solid rgba(248, 250, 252, 0.2);
+  color: #f97316;
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  overflow: hidden;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.12s ease;
+}
+
+.btn-favorite-heart:hover {
+  background-color: rgba(15, 23, 42, 0.9);
+  border-color: rgba(248, 250, 252, 0.65);
+  transform: translateY(-1px);
+}
+
+.btn-favorite-heart .heart-normal,
+.btn-favorite-heart .heart-broken {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.btn-favorite-heart .heart-normal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-favorite-heart .heart-broken {
+  position: absolute;
+  right: 0.55rem;
+  opacity: 0;
+  transform: translateY(6px) scale(0.8);
+  color: #ef4444;
+}
+
+/* Modo roto al hacer hover */
+.btn-favorite-heart.heart-remove-mode .heart-normal {
+  opacity: 0;
+  transform: translateY(-6px) scale(0.8);
+}
+
+.btn-favorite-heart.heart-remove-mode .heart-broken {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ============================
+   RULETA (CASINO INDEX) – SIN CAMBIOS FUNCIONALES
+   ============================ */
+
+.roulette-header h1 {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Botón comprar créditos */
+.btn-buy-credits {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  background: radial-gradient(circle at top, #f97316 0, #ea580c 40%, #b91c1c 100%);
+  color: #fefce8;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow:
+    0 0 0 2px rgba(248, 250, 252, 0.18),
+    0 18px 35px rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.btn-buy-credits:hover {
+  color: #fefce8;
+  transform: translateY(-1px);
+}
+
+.btn-buy-credits-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 10% 0, rgba(254, 240, 138, 0.9), transparent 55%);
+  opacity: 0.75;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* Selector ruletas */
+.roulette-selector {
+  margin-bottom: 1.5rem;
+}
+
+.roulette-choice-card {
+  position: relative;
+  background: radial-gradient(circle at top, #020617 0, #020617 70%);
+  border-radius: 0.9rem;
+  padding: 0.85rem 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.7);
+  cursor: pointer;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease, background 0.18s ease;
+}
+
+.roulette-choice-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.85);
+  border-color: rgba(248, 250, 252, 0.7);
+}
+
+.roulette-choice-card.active {
+  border-color: rgba(250, 204, 21, 0.95);
+  box-shadow:
+    0 0 0 1px rgba(250, 204, 21, 0.7),
+    0 16px 32px rgba(15, 23, 42, 0.9);
+}
+
+.roulette-choice-card.legendary {
+  background: radial-gradient(circle at top, #1e293b 0, #020617 60%, #020617 100%);
+}
+
+.roulette-choice-badge {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.75rem;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fef9c3;
+  opacity: 0.9;
+}
+
+.roulette-choice-tags {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0.35rem;
+}
+
+.roulette-choice-tags li::before {
+  content: "• ";
+  color: #9ca3af;
+}
+
+.roulette-choice-price {
+  font-weight: 700;
+  color: #fbbf24;
+}
+
+/* Card ruleta principal */
+.roulette-card {
+  background: radial-gradient(circle at top, #020617 0, #020617 55%, #020617 100%);
+  color: #e5e7eb;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+}
+
+.roulette-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 1.6rem;
+  padding: 1px;
+  background: conic-gradient(
+    from 180deg,
+    rgba(250, 204, 21, 0.95),
+    rgba(37, 99, 235, 0.9),
+    rgba(129, 140, 248, 0.95),
+    rgba(244, 114, 182, 0.95),
+    rgba(250, 204, 21, 0.95)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.roulette-card-header {
+  background: transparent;
+}
+
+.roulette-body {
+  position: relative;
+  z-index: 1;
+}
+
+/* Rarezas pills */
+.roulette-rarities .rarity-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background-color: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+}
+
+.rarity-color-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+/* Colores 1–8 */
+.rarity-1 .rarity-color-dot { background: var(--rarity-common); }
+.rarity-2 .rarity-color-dot { background: var(--rarity-uncommon); }
+.rarity-3 .rarity-color-dot { background: var(--rarity-rare); }
+.rarity-4 .rarity-color-dot { background: var(--rarity-superrare); }
+.rarity-5 .rarity-color-dot { background: var(--rarity-elite); }
+.rarity-6 .rarity-color-dot { background: var(--rarity-epic); }
+.rarity-7 .rarity-color-dot { background: var(--rarity-mythic); }
+.rarity-8 .rarity-color-dot { background: var(--rarity-legendary); }
+
+/* Ventana ruleta horizontal */
+.roulette-window-wrapper {
+  position: relative;
+  background: radial-gradient(circle at top, #1e293b 0, #020617 70%, #020617 100%);
+  border-radius: 0.9rem;
+  padding: 0.9rem;
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.9),
+    inset 0 0 0 1px rgba(148, 163, 184, 0.12);
+}
+
+.roulette-bottom-glow {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 60%;
+  height: 40px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(250, 204, 21, 0.45), transparent 60%);
+  opacity: 0.7;
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+/* Línea central */
+.roulette-highlight {
+  position: absolute;
+  top: 0.7rem;
+  bottom: 0.7rem;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(250, 204, 21, 0.95),
+    transparent
+  );
+  box-shadow: 0 0 14px rgba(250, 204, 21, 1);
+  z-index: 3;
+}
+
+.roulette-window {
+  overflow: hidden;
+  border-radius: 0.6rem;
+  position: relative;
+  background: #020617;
+}
+
+.roulette-strip {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.35rem;
+  will-change: transform;
+  transform: translateX(0);
+}
+
+/* bounce mínimo al final */
+.roulette-strip-bounce {
+  animation: rouletteBounce 0.25s ease-out;
+}
+
+@keyframes rouletteBounce {
+  0%   { transform: translateX(var(--roulette-offset, 0)); }
+  40%  { transform: translateX(calc(var(--roulette-offset, 0) - 5px)); }
+  100% { transform: translateX(var(--roulette-offset, 0)); }
+}
+
+/* Items ruleta */
+.roulette-item {
+  min-width: 120px;
+  max-width: 120px;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  background: linear-gradient(to bottom, #020617, #020617);
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roulette-item-inner {
+  width: 100%;
+  border-radius: 0.45rem;
+  padding: 0.3rem 0.35rem;
+  background: radial-gradient(circle at top, rgba(148, 163, 184, 0.2), transparent 60%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.roulette-item-rarity {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.9;
+}
+
+.roulette-item-name {
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* Imagen de carta en ruleta */
+.roulette-item-image {
+  width: 28px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.6);
+}
+
+/* Colores por rareza */
+.roulette-item.rarity-common {
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.6);
+}
+.roulette-item.rarity-common .roulette-item-rarity {
+  color: #9ca3af;
+}
+
+.roulette-item.rarity-uncommon {
+  box-shadow: inset 0 0 0 1px rgba(34, 197, 94, 0.7),
+              0 0 14px rgba(34, 197, 94, 0.4);
+}
+.roulette-item.rarity-uncommon .roulette-item-rarity {
+  color: #4ade80;
+}
+
+.roulette-item.rarity-rare {
+  box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.7),
+              0 0 16px rgba(59, 130, 246, 0.5);
+}
+.roulette-item.rarity-rare .roulette-item-rarity {
+  color: #60a5fa;
+}
+
+.roulette-item.rarity-superrare {
+  box-shadow: inset 0 0 0 1px rgba(139, 92, 246, 0.8),
+              0 0 18px rgba(139, 92, 246, 0.6);
+}
+.roulette-item.rarity-superrare .roulette-item-rarity {
+  color: #a855f7;
+}
+
+.roulette-item.rarity-elite {
+  box-shadow: inset 0 0 0 1px rgba(236, 72, 153, 0.8),
+              0 0 20px rgba(236, 72, 153, 0.7);
+}
+.roulette-item.rarity-elite .roulette-item-rarity {
+  color: #fb7185;
+}
+
+.roulette-item.rarity-epic {
+  box-shadow: inset 0 0 0 1px rgba(249, 115, 22, 0.9),
+              0 0 22px rgba(249, 115, 22, 0.8);
+}
+.roulette-item.rarity-epic .roulette-item-rarity {
+  color: #fdba74;
+}
+
+.roulette-item.rarity-mythic {
+  box-shadow: inset 0 0 0 1px rgba(250, 204, 21, 0.9),
+              0 0 24px rgba(250, 204, 21, 0.9);
+}
+.roulette-item.rarity-mythic .roulette-item-rarity {
+  color: #facc15;
+}
+
+.roulette-item.rarity-legendary {
+  box-shadow:
+    inset 0 0 0 1px rgba(250, 250, 250, 0.95),
+    0 0 30px rgba(250, 250, 250, 1);
+}
+.roulette-item.rarity-legendary .roulette-item-rarity {
+  color: #fef9c3;
+}
+
+/* Select autogiros */
+.roulette-autospins-select {
+  min-width: 120px;
+}
+
+/* Footer ruleta */
+.roulette-footer {
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 0 0 1.5rem 1.5rem;
+}
+
+/* Toast ruleta */
+.roulette-toast-container {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1080;
+  pointer-events: none;
+}
+
+.roulette-toast {
+  max-width: 280px;
+  margin-top: 4px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+
+.roulette-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.roulette-toast-inner {
+  background: radial-gradient(circle at top, #0f172a 0, #020617 70%);
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 12px 25px rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.roulette-toast-title {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+}
+
+.roulette-toast-body {
+  font-size: 0.85rem;
+}
+
+/* Toast colores por rareza */
+.roulette-toast-inner.rarity-legendary {
+  border-color: rgba(250, 250, 250, 0.9);
+  box-shadow: 0 0 25px rgba(250, 250, 250, 0.8);
+}
+.roulette-toast-inner.rarity-mythic {
+  border-color: rgba(250, 204, 21, 0.8);
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.6);
+}
+.roulette-toast-inner.rarity-epic {
+  border-color: rgba(249, 115, 22, 0.8);
+}
+.roulette-toast-inner.rarity-rare {
+  border-color: rgba(59, 130, 246, 0.8);
+}
+
+/* Aviso legal casi invisible */
+.roulette-disclaimer {
+  font-size: 0.5rem;
+  color: rgba(148, 163, 184, 0.2);
+}
+
+/* Modo claro ruleteo */
+html[data-bs-theme="light"] .roulette-card {
+  background: radial-gradient(circle at top, #e5f0ff 0, #dbeafe 40%, #eff6ff 100%);
+  color: #0f172a;
+}
+
+html[data-bs-theme="light"] .roulette-window-wrapper {
+  background: radial-gradient(circle at top, #dbeafe 0, #1d4ed8 70%, #1e293b 100%);
+}
+
+html[data-bs-theme="light"] .roulette-window {
+  background: #020617;
+}
+
+html[data-bs-theme="light"] .roulette-footer {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+html[data-bs-theme="light"] .roulette-choice-card {
+  background: radial-gradient(circle at top, #e5f0ff 0, #dbeafe 40%, #eff6ff 100%);
+  border-color: rgba(148, 163, 184, 0.4);
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
+}
+
+html[data-bs-theme="light"] .roulette-choice-card.legendary {
+  background: radial-gradient(circle at top, #f3e8ff 0, #e0f2fe 45%, #eff6ff 100%);
+}
+
+/* ============================
+   MODAL RECOMPENSA DOPAMINA
+   ============================ */
+
+.reward-modal .modal-dialog {
+  max-width: 420px;
+}
+.reward-modal .modal-content.reward-modal-content {
+  position: relative;
+  background: radial-gradient(circle at top, #ffe082 0, #2b2342 55%, #120c25 100%);
+  border-radius: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  overflow: hidden;
+  color: #fff;
+}
+.reward-modal .modal-body {
+  position: relative;
+  z-index: 2;
+}
+
+.reward-glow {
+  position: absolute;
+  inset: -30%;
+  background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 60%);
+  opacity: 0;
+  transform: scale(0.7);
+  animation: rewardGlow 1s ease-out forwards;
+}
+
+.reward-rays {
+  position: absolute;
+  inset: -40%;
+  background-image: conic-gradient(from 0deg,
+    rgba(255,255,255,0.0) 0deg,
+    rgba(255,255,255,0.35) 40deg,
+    rgba(255,255,255,0.0) 80deg
+  );
+  mix-blend-mode: screen;
+  opacity: 0;
+  animation: rewardRays 1.4s ease-out forwards;
+}
+
+.reward-card-wrapper {
+  position: relative;
+  margin: 12px auto;
+  width: 180px;
+  height: 240px;
+  perspective: 1000px;
+}
+
+.reward-card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #fff 0, #d1c4e9 40%, #4527a0 100%);
+  box-shadow:
+    0 0 25px rgba(255, 255, 255, 0.35),
+    0 20px 40px rgba(0, 0, 0, 0.65);
+  transform-origin: center center;
+  animation: rewardPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+             rewardFloat 3.2s ease-in-out 0.7s infinite alternate;
+}
+.reward-card-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Animaciones reward */
+@keyframes rewardGlow {
+  0%   { opacity: 0; transform: scale(0.6); }
+  70%  { opacity: 1; transform: scale(1); }
+  100% { opacity: 0.9; transform: scale(1); }
+}
+
+@keyframes rewardRays {
+  0%   { opacity: 0; transform: rotate(0deg) scale(0.8); }
+  80%  { opacity: 1; transform: rotate(120deg) scale(1); }
+  100% { opacity: 0.9; transform: rotate(150deg) scale(1.05); }
+}
+
+@keyframes rewardPop {
+  0%   { transform: scale(0.2) rotateX(30deg) translateY(40px); opacity: 0; }
+  60%  { transform: scale(1.05) rotateX(0deg) translateY(0);   opacity: 1; }
+  100% { transform: scale(1) rotateX(0deg) translateY(0); }
+}
+
+@keyframes rewardFloat {
+  0%   { transform: translateY(0) rotateZ(-1deg); }
+  100% { transform: translateY(-8px) rotateZ(1deg); }
+}
+
+/* ============================
+   TIENDA INTEGRADA
+   ============================ */
+
+.tienda-section {
+  border-radius: 1rem;
+}
+
+/* Badge créditos tienda */
+#shopCredits {
+  border-radius: 999px;
+}
+
+/* Cartas del día */
+.tienda-card-dia {
+  border-radius: 0.9rem;
+  background: radial-gradient(circle at top, #020617 0, #020617 60%, #020617 100%);
+}
+
+html[data-bs-theme="light"] .tienda-card-dia {
+  background: radial-gradient(circle at top, #e5f0ff 0, #dbeafe 40%, #eff6ff 100%);
+}
+
+.tienda-card-dia .carta-img-placeholder {
+  height: 140px;
+}
+
+.tienda-dia-btn-comprar {
+  font-size: 0.75rem;
+  padding-inline: 0.55rem;
+}
+
+/* Botón recargar tienda */
+.btn-recargar-tienda {
+  position: relative;
+  overflow: hidden;
+  border-radius: 999px;
+  background: radial-gradient(circle at top, #22c55e 0, #16a34a 35%, #14532d 100%);
+  border: 1px solid rgba(34, 197, 94, 0.8);
+  color: #ecfdf5;
+  box-shadow:
+    0 0 0 1px rgba(22, 163, 74, 0.6),
+    0 10px 22px rgba(22, 101, 52, 0.9);
+  padding-inline: 0.9rem;
+  font-size: 0.7rem;
+}
+
+.btn-recargar-tienda:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 1px rgba(34, 197, 94, 0.9),
+    0 14px 28px rgba(22, 101, 52, 1);
+}
+
+.btn-recargar-tienda .recargar-icon-wrap {
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #bbf7d0 0, #22c55e 45%, #16a34a 100%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 12px rgba(74, 222, 128, 0.7);
+}
+
+.btn-recargar-tienda .recargar-icon-wrap i {
+  animation: recargarSpin 1.6s linear infinite;
+  font-size: 0.9rem;
+}
+
+@keyframes recargarSpin {
+  0%   { transform: rotate(0deg); }
+  40%  { transform: rotate(360deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Sobres dopamina portada */
+.tienda-pack-card {
+  border-radius: 1rem;
+  background: radial-gradient(circle at top, #020617 0, #020617 65%, #020617 100%);
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.9);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+html[data-bs-theme="light"] .tienda-pack-card {
+  background: radial-gradient(circle at top, #e5f0ff 0, #dbeafe 40%, #eff6ff 100%);
+}
+
+.tienda-pack-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 1);
+}
+
+.tienda-pack-art {
+  position: relative;
+  width: 64px;
+  height: 92px;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow:
+    0 0 20px rgba(59, 130, 246, 0.7),
+    0 12px 25px rgba(15, 23, 42, 0.9);
+  flex-shrink: 0;
+}
+
+/* Diferentes paletas por pack */
+.tienda-pack-art-basic {
+  background: conic-gradient(
+    from 200deg,
+    rgba(248,250,252,0.7),
+    rgba(129,140,248,0.9),
+    rgba(59,130,246,1),
+    rgba(248,250,252,0.7)
+  );
+}
+
+.tienda-pack-art-competitive {
+  background: conic-gradient(
+    from 140deg,
+    rgba(248,250,252,0.6),
+    rgba(45,212,191,0.95),
+    rgba(56,189,248,0.95),
+    rgba(248,250,252,0.6)
+  );
+}
+
+.tienda-pack-art-fire {
+  background: conic-gradient(
+    from 120deg,
+    rgba(254,243,199,0.9),
+    rgba(249,115,22,0.98),
+    rgba(220,38,38,0.98),
+    rgba(254,243,199,0.9)
+  );
+}
+
+.tienda-pack-art-grail {
+  background: conic-gradient(
+    from 160deg,
+    rgba(250,250,250,1),
+    rgba(250,204,21,1),
+    rgba(96,165,250,1),
+    rgba(236,72,153,1),
+    rgba(250,250,250,1)
+  );
+}
+
+.tienda-pack-art::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border-radius: 0.55rem;
+  background: radial-gradient(circle at top, rgba(15,23,42,0.95), rgba(2,6,23,1));
+  box-shadow: inset 0 0 0 1px rgba(15,23,42,0.9);
+}
+
+.tienda-pack-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 0, rgba(255,255,255,0.35), transparent 55%);
+  opacity: 0.8;
+  mix-blend-mode: screen;
+}
+
+.tienda-pack-emblem {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #fefce8 0, #facc15 45%, #f97316 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 10px rgba(250, 204, 21, 0.9),
+    0 0 30px rgba(250, 250, 250, 0.8);
+  color: #111827;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.tienda-pack-card:hover .tienda-pack-art {
+  animation: packFloat 1.3s ease-in-out infinite alternate;
+}
+
+@keyframes packFloat {
+  0%   { transform: translateY(0) rotate(-2deg); }
+  100% { transform: translateY(-6px) rotate(2deg); }
+}
+
+/* APERTURA SOBRE – CARTA A CARTA */
+.pack-reveal-backdrop {
+  position: relative;
+  border-radius: 1rem;
+  padding: 10px;
+  background: radial-gradient(circle at top, #020617 0, #020617 60%, #0f172a 100%);
+  box-shadow:
+    0 0 30px rgba(59, 130, 246, 0.8),
+    inset 0 0 0 1px rgba(15, 23, 42, 0.9);
+}
+
+.pack-reveal-card-slot {
+  width: 180px;
+  height: 260px;
+  margin: 0 auto;
+  perspective: 1200px;
+  position: relative;
+}
+
+.pack-reveal-card-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #e5e7eb 0, #9ca3af 40%, #020617 100%);
+  box-shadow:
+    0 0 25px rgba(255,255,255,0.3),
+    0 20px 40px rgba(0,0,0,0.8);
+  transform-origin: center;
+}
+
+/* Animaciones por rareza */
+@keyframes revealCommon {
+  0%   { transform: scale(0.4) rotateY(40deg); opacity: 0; }
+  60%  { transform: scale(1.03) rotateY(0deg); opacity: 1; }
+  100% { transform: scale(1) rotateY(0deg); }
+}
+
+@keyframes revealRare {
+  0%   { transform: scale(0.3) rotateY(60deg); opacity: 0; filter: brightness(1.8); }
+  40%  { transform: scale(1.1) rotateY(0deg); opacity: 1; filter: brightness(1); }
+  100% { transform: scale(1) rotateY(0deg); }
+}
+
+@keyframes revealEpic {
+  0%   { transform: translateY(40px) scale(0.6); opacity: 0; box-shadow: 0 0 60px rgba(59,130,246,1); }
+  50%  { transform: translateY(-8px) scale(1.08); opacity: 1; box-shadow: 0 0 120px rgba(96,165,250,1); }
+  100% { transform: translateY(0) scale(1); box-shadow: 0 0 40px rgba(59,130,246,0.9); }
+}
+
+@keyframes revealLegendary {
+  0%   { transform: translateY(50px) scale(0.4) rotateZ(-8deg); opacity: 0; box-shadow: 0 0 0 rgba(250,250,250,0); }
+  40%  { transform: translateY(-10px) scale(1.1) rotateZ(4deg); opacity: 1; box-shadow: 0 0 140px rgba(250,250,250,1); }
+  70%  { transform: translateY(0) scale(1.06) rotateZ(0deg); }
+  100% { transform: translateY(-4px) scale(1); box-shadow: 0 0 80px rgba(250,204,21,1); }
+}
+
+/* clases extra para glow según rareza */
+.pack-reveal-card-inner.rarity-common { animation: revealCommon 0.5s ease-out; }
+.pack-reveal-card-inner.rarity-uncommon { animation: revealCommon 0.6s ease-out; }
+.pack-reveal-card-inner.rarity-rare { animation: revealRare 0.8s ease-out; }
+.pack-reveal-card-inner.rarity-superrare { animation: revealEpic 0.9s ease-out; }
+.pack-reveal-card-inner.rarity-elite { animation: revealEpic 1s ease-out; }
+.pack-reveal-card-inner.rarity-epic { animation: revealEpic 1.1s ease-out; }
+.pack-reveal-card-inner.rarity-mythic { animation: revealLegendary 1.1s ease-out; }
+.pack-reveal-card-inner.rarity-legendary { animation: revealLegendary 1.3s ease-out; }
+
+/* ============================
+   PANEL PROBABILIDADES + ÚLTIMOS DROPS
+   ============================ */
+
+.stats-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.stats-bar-label {
+  flex: 0 0 75px;
+  font-size: 0.7rem;
+}
+
+.stats-bar-track {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.4);
+  overflow: hidden;
+}
+
+.stats-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(148,163,184,0.8), rgba(248,250,252,0.95));
+}
+
+/* Colores barra por rareza */
+.stats-bar-fill.rarity-common {
+  background: linear-gradient(90deg, rgba(156,163,175,0.5), rgba(229,231,235,0.9));
+}
+.stats-bar-fill.rarity-uncommon {
+  background: linear-gradient(90deg, rgba(34,197,94,0.5), rgba(74,222,128,0.9));
+}
+.stats-bar-fill.rarity-rare {
+  background: linear-gradient(90deg, rgba(59,130,246,0.6), rgba(129,140,248,0.95));
+}
+.stats-bar-fill.rarity-superrare {
+  background: linear-gradient(90deg, rgba(139,92,246,0.6), rgba(196,181,253,0.95));
+}
+.stats-bar-fill.rarity-elite {
+  background: linear-gradient(90deg, rgba(236,72,153,0.6), rgba(244,114,182,0.95));
+}
+.stats-bar-fill.rarity-epic {
+  background: linear-gradient(90deg, rgba(249,115,22,0.7), rgba(253,186,116,0.95));
+}
+.stats-bar-fill.rarity-mythic {
+  background: linear-gradient(90deg, rgba(250,204,21,0.7), rgba(254,240,138,0.98));
+}
+.stats-bar-fill.rarity-legendary {
+  background: linear-gradient(90deg, rgba(250,250,250,0.8), rgba(253,224,71,0.98));
+}
+
+.stats-bar-value {
+  flex: 0 0 42px;
+  text-align: right;
+  font-size: 0.7rem;
+}
+
+/* Lista últimos drops épicos */
+#lastDrops li {
+  padding: 0.15rem 0.25rem;
+  border-radius: 0.4rem;
+}
+
+#lastDrops li:nth-child(odd) {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 991.98px) {
+  .roulette-window-wrapper {
+    padding-inline: 0.5rem;
+  }
+  .roulette-item {
+    min-width: 110px;
+    max-width: 110px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar-main .navbar-brand .brand-text {
+    font-size: 0.95rem;
+  }
+
+  .roulette-card {
+    border-radius: 1.1rem;
+  }
+
+  .card-carta {
+    border-radius: 0.8rem;
+  }
+}
