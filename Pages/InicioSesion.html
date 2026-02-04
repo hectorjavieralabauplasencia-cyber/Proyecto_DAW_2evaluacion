@@ -1,233 +1,199 @@
 <!doctype html>
-<html lang="es" data-bs-theme="light">
+<html lang="es" data-bs-theme="dark">
+
 <head>
   <meta charset="utf-8">
   <title>PokeMarket - Iniciar sesión</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap 5.3 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Bootstrap Icons -->
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
   <!-- CSS compartido PokeMarket -->
   <link rel="stylesheet" href="../CSS/style.css">
 </head>
+
 <body>
 
-<div class="bg-pokeballs d-flex flex-column">
+  <div class="bg-pokeballs d-flex flex-column">
 
-  <!-- NAVBAR PokeMarket + modo claro/oscuro -->
-  <nav class="navbar navbar-expand-lg navbar-poke navbar-dark shadow-sm">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="../Index.html">
-        <img src="../img/Masterball.png" alt="Masterball" style="width: 32px; height: 32px;" class="me-2">
-        <span class="fw-bold">PokeMarket</span>
-      </a>
+    <!-- NAVBAR PokeMarket + modo claro/oscuro -->
+    <nav class="navbar navbar-expand-lg navbar-poke navbar-dark shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="../Index.html">
+          <img src="../img/Masterball.png" alt="Masterball" style="width: 32px; height: 32px;" class="me-2">
+          <span class="fw-bold">PokeMarket</span>
+        </a>
 
-      <div class="d-flex align-items-center ms-auto">
-        <i class="bi bi-sun-fill text-warning me-1"></i>
-        <div class="form-check form-switch text-light mb-0">
-          <input class="form-check-input" type="checkbox" id="darkModeSwitch"
-                 aria-label="Cambiar entre modo claro y oscuro">
-          <label class="form-check-label" for="darkModeSwitch">
-            <i class="bi bi-moon-stars-fill"></i>
-          </label>
+
+      </div>
+    </nav>
+
+    <!-- CARD LOGIN CENTRADA -->
+    <div class="container flex-grow-1 d-flex justify-content-center align-items-center py-5">
+      <div class="card shadow-lg w-100" style="max-width: 420px;">
+
+        <!-- Logo + nombre -->
+        <div class="card-header text-center bg-transparent border-0 mt-3">
+          <img src="../img/Masterball.png" alt="Masterball" style="width: 56px; height: 56px;" class="mb-2">
+          <h4 class="fw-bold mb-0">PokeMarket</h4>
+        </div>
+
+        <div class="card-body pt-0">
+          <h5 class="text-center mb-3">Iniciar sesión</h5>
+
+          <form id="formLogin" class="needs-validation" novalidate>
+            <!-- Usuario o correo -->
+            <div class="mb-3">
+              <label for="userOrEmail" class="form-label">Nombre de usuario o correo electrónico</label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="bi bi-person-circle"></i>
+                </span>
+                <input type="text" class="form-control" id="userOrEmail" name="userOrEmail" required autofocus
+                  aria-describedby="userHelp">
+              </div>
+              <div id="userHelp" class="form-text">
+                Puedes usar tu nombre de usuario o tu correo.
+              </div>
+              <div class="invalid-feedback">
+                Introduce tu nombre de usuario o correo electrónico.
+              </div>
+            </div>
+
+            <!-- Contraseña -->
+            <div class="mb-2">
+              <label for="loginPassword" class="form-label">Contraseña</label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="bi bi-shield-lock-fill"></i>
+                </span>
+                <input type="password" class="form-control" id="loginPassword" name="loginPassword" required
+                  aria-describedby="loginPassHelp">
+                <button class="btn btn-outline-secondary" type="button" id="toggleLoginPass"
+                  aria-label="Mostrar u ocultar contraseña">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+              <div id="loginPassHelp" class="form-text">
+                Mantén tu cuenta segura. No compartas tu contraseña.
+              </div>
+              <div class="invalid-feedback">
+                Introduce tu contraseña.
+              </div>
+            </div>
+
+            <!-- Problemas para iniciar sesión -->
+            <div class="mb-3 text-center">
+              <a href="#" class="small text-decoration-none">
+                ¿Tienes problemas para iniciar sesión?
+              </a>
+            </div>
+
+            <!-- Botón iniciar sesión -->
+            <div class="d-grid mb-3">
+              <button type="submit" class="btn btn-poke">
+                Iniciar sesión
+              </button>
+            </div>
+
+            <!-- Separador -->
+            <div class="d-flex align-items-center mb-3">
+              <hr class="flex-grow-1">
+              <span class="mx-2 small text-muted">o</span>
+              <hr class="flex-grow-1">
+            </div>
+
+            <!-- Botón Google -->
+            <div class="d-grid mb-4">
+              <button type="button" class="btn btn-google" id="googleSignInBtn">
+                <span class="me-2">
+                  <i class="bi bi-google"></i>
+                </span>
+                Continuar con Google
+              </button>
+            </div>
+
+            <!-- Crear cuenta -->
+            <div class="text-center mt-2 pb-2">
+              <p class="mb-2">¿No tienes cuenta?</p>
+              <a href="Registro.html" class="btn btn-poke btn-sm">
+                Crear cuenta
+              </a>
+            </div>
+
+          </form>
         </div>
       </div>
     </div>
-  </nav>
 
-  <!-- CARD LOGIN CENTRADA -->
-  <div class="container flex-grow-1 d-flex justify-content-center align-items-center py-5">
-    <div class="card shadow-lg w-100" style="max-width: 420px;">
+  </div> <!-- /.bg-pokeballs -->
 
-      <!-- Logo + nombre -->
-      <div class="card-header text-center bg-transparent border-0 mt-3">
-        <img src="../img/Masterball.png" alt="Masterball" style="width: 56px; height: 56px;" class="mb-2">
-        <h4 class="fw-bold mb-0">PokeMarket</h4>
-      </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-      <div class="card-body pt-0">
-        <h5 class="text-center mb-3">Iniciar sesión</h5>
+  <script>
 
-        <form id="formLogin" class="needs-validation" novalidate>
-          <!-- Usuario o correo -->
-          <div class="mb-3">
-            <label for="userOrEmail" class="form-label">Nombre de usuario o correo electrónico</label>
-            <div class="input-group">
-              <span class="input-group-text">
-                <i class="bi bi-person-circle"></i>
-              </span>
-              <input type="text"
-                     class="form-control"
-                     id="userOrEmail"
-                     name="userOrEmail"
-                     required
-                     autofocus
-                     aria-describedby="userHelp">
-            </div>
-            <div id="userHelp" class="form-text">
-              Puedes usar tu nombre de usuario o tu correo.
-            </div>
-            <div class="invalid-feedback">
-              Introduce tu nombre de usuario o correo electrónico.
-            </div>
-          </div>
 
-          <!-- Contraseña -->
-          <div class="mb-2">
-            <label for="loginPassword" class="form-label">Contraseña</label>
-            <div class="input-group">
-              <span class="input-group-text">
-                <i class="bi bi-shield-lock-fill"></i>
-              </span>
-              <input type="password"
-                     class="form-control"
-                     id="loginPassword"
-                     name="loginPassword"
-                     required
-                     aria-describedby="loginPassHelp">
-              <button class="btn btn-outline-secondary"
-                      type="button"
-                      id="toggleLoginPass"
-                      aria-label="Mostrar u ocultar contraseña">
-                <i class="bi bi-eye"></i>
-              </button>
-            </div>
-            <div id="loginPassHelp" class="form-text">
-              Mantén tu cuenta segura. No compartas tu contraseña.
-            </div>
-            <div class="invalid-feedback">
-              Introduce tu contraseña.
-            </div>
-          </div>
+    // Lógica login: ojo + validación básica
+    (() => {
+      'use strict';
 
-          <!-- Problemas para iniciar sesión -->
-          <div class="mb-3 text-center">
-            <a href="#" class="small text-decoration-none">
-              ¿Tienes problemas para iniciar sesión?
-            </a>
-          </div>
+      const form = document.getElementById('formLogin');
+      const pass = document.getElementById('loginPassword');
+      const togglePass = document.getElementById('toggleLoginPass');
+      const googleBtn = document.getElementById('googleSignInBtn');
 
-          <!-- Botón iniciar sesión -->
-          <div class="d-grid mb-3">
-            <button type="submit" class="btn btn-poke">
-              Iniciar sesión
-            </button>
-          </div>
+      function togglePassword(input, button) {
+        const icon = button.querySelector('i');
+        if (input.type === 'password') {
+          input.type = 'text';
+          icon.classList.remove('bi-eye');
+          icon.classList.add('bi-eye-slash');
+        } else {
+          input.type = 'password';
+          icon.classList.remove('bi-eye-slash');
+          icon.classList.add('bi-eye');
+        }
+      }
 
-          <!-- Separador -->
-          <div class="d-flex align-items-center mb-3">
-            <hr class="flex-grow-1">
-            <span class="mx-2 small text-muted">o</span>
-            <hr class="flex-grow-1">
-          </div>
+      togglePass.addEventListener('click', () => togglePassword(pass, togglePass));
 
-          <!-- Botón Google -->
-          <div class="d-grid mb-4">
-            <button type="button" class="btn btn-google" id="googleSignInBtn">
-              <span class="me-2">
-                <i class="bi bi-google"></i>
-              </span>
-              Continuar con Google
-            </button>
-          </div>
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+          form.classList.add('was-validated');
+          return;
+        }
 
-          <!-- Crear cuenta -->
-          <div class="text-center mt-2 pb-2">
-            <p class="mb-2">¿No tienes cuenta?</p>
-            <a href="Registro.html" class="btn btn-poke btn-sm">
-              Crear cuenta
-            </a>
-          </div>
+        event.preventDefault();
+        form.classList.remove('was-validated');
 
-        </form>
-      </div>
-    </div>
-  </div>
+        // Simular login: guardar datos en localStorage
+        const userOrEmail = document.getElementById('userOrEmail').value;
+        const password = document.getElementById('loginPassword').value;
 
-</div> <!-- /.bg-pokeballs -->
+        // Aquí iría la validación real con el servidor
+        // Por ahora, simulamos con datos dummy
+        localStorage.setItem('pm_user_name', userOrEmail.split('@')[0] || 'Entrenador');
+        localStorage.setItem('pm_user_email', userOrEmail.includes('@') ? userOrEmail : userOrEmail + '@gmail.com');
+        localStorage.setItem('pm_user_avatar', '../img/avatars/pokeball.png');
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        // Redirigir a Index.html
+        window.location.href = '../Index.html';
+      });
 
-<script>
-// SWITCH modo claro / oscuro (data-bs-theme + localStorage)
-document.addEventListener('DOMContentLoaded', () => {
-  const html = document.documentElement;
-  const switchElement = document.getElementById('darkModeSwitch');
-
-  const savedTheme = localStorage.getItem('bsTheme') || 'light';
-  html.setAttribute('data-bs-theme', savedTheme);
-  switchElement.checked = savedTheme === 'dark';
-
-  switchElement.addEventListener('change', function () {
-    const theme = this.checked ? 'dark' : 'light';
-    html.setAttribute('data-bs-theme', theme);
-    localStorage.setItem('bsTheme', theme);
-  });
-});
-
-// Lógica login: ojo + validación básica
-(() => {
-  'use strict';
-
-  const form       = document.getElementById('formLogin');
-  const pass       = document.getElementById('loginPassword');
-  const togglePass = document.getElementById('toggleLoginPass');
-  const googleBtn  = document.getElementById('googleSignInBtn');
-
-  function togglePassword(input, button) {
-    const icon = button.querySelector('i');
-    if (input.type === 'password') {
-      input.type = 'text';
-      icon.classList.remove('bi-eye');
-      icon.classList.add('bi-eye-slash');
-    } else {
-      input.type = 'password';
-      icon.classList.remove('bi-eye-slash');
-      icon.classList.add('bi-eye');
-    }
-  }
-
-  togglePass.addEventListener('click', () => togglePassword(pass, togglePass));
-
-  form.addEventListener('submit', event => {
-    if (!form.checkValidity()) {
-      event.preventDefault();
-      event.stopPropagation();
-      form.classList.add('was-validated');
-      return;
-    }
-
-    event.preventDefault();
-    form.classList.remove('was-validated');
-
-    // Simular login: guardar datos en localStorage
-    const userOrEmail = document.getElementById('userOrEmail').value;
-    const password = document.getElementById('loginPassword').value;
-
-    // Aquí iría la validación real con el servidor
-    // Por ahora, simulamos con datos dummy
-    localStorage.setItem('pm_user_name', userOrEmail.split('@')[0] || 'Entrenador');
-    localStorage.setItem('pm_user_email', userOrEmail.includes('@') ? userOrEmail : userOrEmail + '@gmail.com');
-    localStorage.setItem('pm_user_avatar', '../img/avatars/pokeball.png');
-
-    // Redirigir a Index.html
-    window.location.href = '../Index.html';
-  });
-
-  // Placeholder para Google Identity
-  googleBtn.addEventListener('click', () => {
-    alert('Aquí iría el selector real de cuentas de Google (requiere API de Google).');
-  });
-})();
-</script>
+      // Placeholder para Google Identity
+      googleBtn.addEventListener('click', () => {
+        alert('Aquí iría el selector real de cuentas de Google (requiere API de Google).');
+      });
+    })();
+  </script>
 
 </body>
-</html>
 
+</html>

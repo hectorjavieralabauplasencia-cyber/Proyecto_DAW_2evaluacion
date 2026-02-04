@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-bs-theme="light">
+<html lang="es" data-bs-theme="dark">
 
 <head>
   <meta charset="utf-8">
@@ -44,15 +44,7 @@
           <span class="fw-bold">0</span>
         </div>
 
-        <!-- Switch claro/oscuro -->
-        <div class="d-flex align-items-center gap-2">
-          <i class="bi bi-sun small text-warning"></i>
-          <div class="form-check form-switch mb-0">
-            <input class="form-check-input theme-switch" type="checkbox" id="darkModeSwitch"
-              aria-label="Cambiar entre modo claro y oscuro">
-          </div>
-          <i class="bi bi-moon-stars small text-secondary-emphasis"></i>
-        </div>
+
 
         <!-- Dropdown perfil -->
         <div class="dropdown">
@@ -803,19 +795,7 @@
   <!-- Script principal: tema, usuario, ruleta, tienda, sobres -->
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
-      const html = document.documentElement;
-      const switchElement = document.getElementById('darkModeSwitch');
 
-      const savedTheme = localStorage.getItem('bsTheme') || 'light';
-      html.setAttribute('data-bs-theme', savedTheme);
-      if (switchElement) {
-        switchElement.checked = savedTheme === 'dark';
-        switchElement.addEventListener('change', function () {
-          const theme = this.checked ? 'dark' : 'light';
-          html.setAttribute('data-bs-theme', theme);
-          localStorage.setItem('bsTheme', theme);
-        });
-      }
 
       const defaultName = 'Entrenador';
       const defaultEmail = 'entrenador@pokemarket.com';
