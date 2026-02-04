@@ -50,6 +50,12 @@
         <div class="ms-auto d-flex align-items-center gap-3 flex-wrap justify-content-end">
 
 
+          <!-- Créditos: icono + número -->
+          <div class="d-flex align-items-center gap-1 me-2" id="globalCredits">
+            <i class="bi bi-coin text-warning"></i>
+            <span class="fw-bold" id="navbarCredits">0</span>
+          </div>
+
           <!-- Dropdown perfil -->
           <div class="dropdown order-0 order-lg-1">
             <button class="btn btn-profile" type="button" id="profileDropdown" data-bs-toggle="dropdown"
@@ -654,6 +660,10 @@
       if (dropdownUserEmail) dropdownUserEmail.textContent = email;
       if (navbarAvatar) navbarAvatar.src = avatar;
       if (dropdownAvatar) dropdownAvatar.src = avatar;
+
+      const credits = localStorage.getItem('pm_credits') || '0';
+      const navbarCredits = document.getElementById('navbarCredits');
+      if (navbarCredits) navbarCredits.textContent = credits;
 
       // Cabecera perfil
       const profileName = document.getElementById('profileName');
