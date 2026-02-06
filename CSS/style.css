@@ -254,37 +254,6 @@ html[data-bs-theme="dark"] .input-group-text {
   font-size: 0.85rem;
   color: #f9fafb;
 }
-
-/* Botón perfil navbar */
-.btn-profile {
-  background-color: transparent;
-  border: 1px solid rgba(248, 250, 252, 0.85);
-  color: #f9fafb;
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
-}
-
-.btn-profile:hover,
-.btn-profile:focus {
-  background-color: rgba(15, 23, 42, 0.55);
-  border-color: rgba(248, 250, 252, 0.7);
-  color: #f9fafb;
-  transform: translateY(-1px);
-}
-
-.avatar-navbar {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid rgba(248, 250, 252, 0.8);
-}
-
 .dropdown-menu {
   font-size: 0.85rem;
   border-radius: 0.6rem;
@@ -294,23 +263,6 @@ html[data-bs-theme="dark"] .input-group-text {
 /* ============================
    BOTONES GENERALES
    ============================ */
-
-.btn-poke {
-  background-color: var(--poke-yellow) !important;
-  border-color: var(--poke-yellow) !important;
-  color: #1f2933 !important;
-  font-weight: 600;
-  transition: background-color 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease;
-}
-
-.btn-poke:hover,
-.btn-poke:focus {
-  background-color: var(--poke-yellow-soft) !important;
-  border-color: var(--poke-yellow-soft) !important;
-  color: #111827 !important;
-  box-shadow: 0 8px 18px rgba(250, 204, 21, 0.45);
-  transform: translateY(-1px);
-}
 
 .btn-outline-secondary {
   border-width: 1px;
@@ -331,26 +283,7 @@ html[data-bs-theme="dark"] .btn-outline-secondary:hover {
   border-color: #6b7280;
 }
 
-/* Botón Google (login) */
-.btn-google {
-  background-color: #ffffff;
-  border-color: #dadce0;
-  color: #3c4043;
-  font-weight: 500;
-  transition: background-color 0.18s ease, box-shadow 0.18s ease;
-}
-
-.btn-google:hover {
-  background-color: #f7f8fc;
-  border-color: #dadce0;
-  color: #202124;
-  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.16);
-}
-
-.btn-google i {
-  color: var(--poke-blue);
-}
-
+ 
 /* ============================
    LOGOS REGISTRO/LOGIN
    ============================ */
@@ -440,44 +373,25 @@ html[data-bs-theme="dark"] .bg-pokeballs {
   background-image: url("../img/FondoOscuro.png");
 }
 
-/* Cabecera amarilla de la card */
-.card-header-poke {
-  background-color: var(--poke-yellow);
-  color: #111827;
-}
+
 
 /* ============================
    AVATARES / PERFIL NAVBAR
    ============================ */
 
-.avatar-option {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+.avatar-select {
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
-.avatar-option:hover {
+.avatar-select:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 0 3px rgba(255, 203, 5, 0.4);
-  border-color: rgba(0, 0, 0, 0.25);
 }
 
-.avatar-option.selected {
+.avatar-select.selected {
   box-shadow: 0 0 0 3px rgba(255, 203, 5, 0.9);
-  border-color: rgba(0, 0, 0, 0.6);
   transform: translateY(-3px);
-}
-
-.avatar-preview {
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid rgba(0, 0, 0, 0.15);
 }
 
 /* ============================
@@ -544,29 +458,6 @@ html[data-bs-theme="dark"] .bg-pokeballs {
 html[data-bs-theme="light"] .badge.bg-poke-username {
   background-color: #e0f2fe;
   color: #0369a1;
-}
-
-.profile-bio {
-  max-width: 480px;
-}
-
-.profile-stats {
-  gap: 1.25rem;
-}
-
-.profile-stat {
-  display: flex;
-  flex-direction: column;
-}
-
-.profile-stat-number {
-  font-weight: 700;
-  font-size: 0.95rem;
-}
-
-.profile-stat-label {
-  font-size: 0.75rem;
-  opacity: 0.8;
 }
 
 /* Botones cabecera perfil */
@@ -890,43 +781,7 @@ html[data-bs-theme="dark"] .profile-nav-pills .nav-link {
   text-transform: uppercase;
 }
 
-/* Botón comprar créditos */
-.btn-buy-credits {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 1.4rem;
-  border-radius: 999px;
-  border: none;
-  background: radial-gradient(circle at top, #f97316 0, #ea580c 40%, #b91c1c 100%);
-  color: #fefce8;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  box-shadow:
-    0 0 0 2px rgba(248, 250, 252, 0.18),
-    0 18px 35px rgba(0, 0, 0, 0.6);
-  text-decoration: none;
-  overflow: hidden;
-}
 
-.btn-buy-credits:hover {
-  color: #fefce8;
-  transform: translateY(-1px);
-}
-
-.btn-buy-credits-glow {
-  position: absolute;
-  inset: 0;
-  -webkit-mask: radial-gradient(circle, #fff 100%, #000 0);
-  mask: radial-gradient(circle, #fff 100%, #000 0);
-  background: radial-gradient(circle at 10% 0, rgba(254, 240, 138, 0.9), transparent 55%);
-  opacity: 0.75;
-  mix-blend-mode: screen;
-  pointer-events: none;
-}
 
 /* Selector ruletas */
 .roulette-selector {
@@ -972,21 +827,7 @@ html[data-bs-theme="dark"] .profile-nav-pills .nav-link {
   opacity: 0.9;
 }
 
-.roulette-choice-tags {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0.35rem;
-}
 
-.roulette-choice-tags li::before {
-  content: "• ";
-  color: #9ca3af;
-}
-
-.roulette-choice-price {
-  font-weight: 700;
-  color: #fbbf24;
-}
 
 /* Card ruleta principal */
 .roulette-card {
@@ -1857,69 +1698,7 @@ html[data-bs-theme="light"] .tienda-pack-card {
    PANEL PROBABILIDADES + ÚLTIMOS DROPS
    ============================ */
 
-.stats-bar-row {
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-}
 
-.stats-bar-label {
-  flex: 0 0 75px;
-  font-size: 0.7rem;
-}
-
-.stats-bar-track {
-  flex: 1;
-  height: 6px;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.4);
-  overflow: hidden;
-}
-
-.stats-bar-fill {
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, rgba(148, 163, 184, 0.8), rgba(248, 250, 252, 0.95));
-}
-
-/* Colores barra por rareza */
-.stats-bar-fill.rarity-common {
-  background: linear-gradient(90deg, rgba(156, 163, 175, 0.5), rgba(229, 231, 235, 0.9));
-}
-
-.stats-bar-fill.rarity-uncommon {
-  background: linear-gradient(90deg, rgba(34, 197, 94, 0.5), rgba(74, 222, 128, 0.9));
-}
-
-.stats-bar-fill.rarity-rare {
-  background: linear-gradient(90deg, rgba(59, 130, 246, 0.6), rgba(129, 140, 248, 0.95));
-}
-
-.stats-bar-fill.rarity-superrare {
-  background: linear-gradient(90deg, rgba(139, 92, 246, 0.6), rgba(196, 181, 253, 0.95));
-}
-
-.stats-bar-fill.rarity-elite {
-  background: linear-gradient(90deg, rgba(236, 72, 153, 0.6), rgba(244, 114, 182, 0.95));
-}
-
-.stats-bar-fill.rarity-epic {
-  background: linear-gradient(90deg, rgba(249, 115, 22, 0.7), rgba(253, 186, 116, 0.95));
-}
-
-.stats-bar-fill.rarity-mythic {
-  background: linear-gradient(90deg, rgba(250, 204, 21, 0.7), rgba(254, 240, 138, 0.98));
-}
-
-.stats-bar-fill.rarity-legendary {
-  background: linear-gradient(90deg, rgba(250, 250, 250, 0.8), rgba(253, 224, 71, 0.98));
-}
-
-.stats-bar-value {
-  flex: 0 0 42px;
-  text-align: right;
-  font-size: 0.7rem;
-}
 
 /* Lista últimos drops épicos */
 #lastDrops li {

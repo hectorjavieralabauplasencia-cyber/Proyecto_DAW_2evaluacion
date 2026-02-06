@@ -63,16 +63,16 @@
 
         <!-- Dropdown perfil -->
         <div class="dropdown">
-          <button class="btn btn-profile d-flex align-items-center" type="button" id="profileDropdown"
+          <button class="btn btn-outline-light rounded-pill d-flex align-items-center" type="button" id="profileDropdown"
             data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="../img/avatars/pokeball.png" alt="Avatar" class="avatar-navbar me-2" id="navbarAvatar">
+            <img src="../img/avatars/pokeball.png" alt="Avatar" class="rounded-circle border me-2" id="navbarAvatar" width="28" height="28" style="object-fit:cover;">
             <span class="d-none d-sm-inline user-name" id="navbarUserName">Entrenador</span>
             <i class="bi bi-caret-down-fill ms-1 small d-none d-sm-inline"></i>
           </button>
           <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="profileDropdown">
             <li class="px-3 py-2">
-              <div class="d-flex align-items-center">
-                <img src="../img/avatars/pokeball.png" alt="Avatar" class="avatar-navbar me-2" id="dropdownAvatar">
+                <div class="d-flex align-items-center">
+                <img src="../img/avatars/pokeball.png" alt="Avatar" class="rounded-circle border me-2" id="dropdownAvatar" width="36" height="36" style="object-fit:cover;">
                 <div class="min-w-0">
                   <div class="fw-semibold small text-truncate" id="dropdownUserName">Entrenador</div>
                   <div class="text-muted xsmall text-truncate" id="dropdownUserEmail">
@@ -301,61 +301,61 @@
               <div class="stats-card h-100">
                 <h6 class="xsmall text-uppercase text-muted mb-2">Distribución por rareza</h6>
                 <div class="stats-bar-wrapper">
-                  <div class="stats-bar-row" data-rarity="common">
-                    <span class="stats-bar-label">Común</span>
+                  <div class="d-flex align-items-center gap-1 mb-1" data-rarity="common">
+                    <span class="xsmall" style="flex: 0 0 75px; font-size: 0.7rem;">Común</span>
                     <div class="stats-bar-track">
                       <div class="stats-bar-fill rarity-common" id="bar-common"></div>
                     </div>
-                    <span class="stats-bar-value xsmall" id="bar-common-label"></span>
+                    <span class="xsmall text-end" style="flex: 0 0 42px; font-size: 0.7rem;" id="bar-common-label"></span>
                   </div>
-                  <div class="stats-bar-row" data-rarity="uncommon">
-                    <span class="stats-bar-label">Infrecuente</span>
+                  <div class="d-flex align-items-center gap-1 mb-1" data-rarity="uncommon">
+                    <span class="xsmall" style="flex: 0 0 75px; font-size: 0.7rem;">Infrecuente</span>
                     <div class="stats-bar-track">
                       <div class="stats-bar-fill rarity-uncommon" id="bar-uncommon"></div>
                     </div>
-                    <span class="stats-bar-value xsmall" id="bar-uncommon-label"></span>
+                    <span class="xsmall text-end" style="flex: 0 0 42px; font-size: 0.7rem;" id="bar-uncommon-label"></span>
                   </div>
-                  <div class="stats-bar-row" data-rarity="rare">
-                    <span class="stats-bar-label">Rara</span>
+                  <div class="d-flex align-items-center gap-1 mb-1" data-rarity="rare">
+                    <span class="xsmall" style="flex: 0 0 75px; font-size: 0.7rem;">Rara</span>
                     <div class="stats-bar-track">
                       <div class="stats-bar-fill rarity-rare" id="bar-rare"></div>
                     </div>
-                    <span class="stats-bar-value xsmall" id="bar-rare-label"></span>
+                    <span class="xsmall text-end" style="flex: 0 0 42px; font-size: 0.7rem;" id="bar-rare-label"></span>
                   </div>
-                  <div class="stats-bar-row" data-rarity="superrare">
-                    <span class="stats-bar-label">Super rara</span>
+                  <div class="d-flex align-items-center gap-1 mb-1" data-rarity="superrare">
+                    <span class="xsmall" style="flex: 0 0 75px; font-size: 0.7rem;">Super rara</span>
                     <div class="stats-bar-track">
                       <div class="stats-bar-fill rarity-superrare" id="bar-superrare"></div>
                     </div>
-                    <span class="stats-bar-value xsmall" id="bar-superrare-label"></span>
+                    <span class="xsmall text-end" style="flex: 0 0 42px; font-size: 0.7rem;" id="bar-superrare-label"></span>
                   </div>
-                  <div class="stats-bar-row" data-rarity="elite">
-                    <span class="stats-bar-label">Élite</span>
+                  <div class="d-flex align-items-center gap-1 mb-1" data-rarity="elite">
+                    <span class="xsmall" style="flex: 0 0 75px; font-size: 0.7rem;">Élite</span>
                     <div class="stats-bar-track">
                       <div class="stats-bar-fill rarity-elite" id="bar-elite"></div>
                     </div>
-                    <span class="stats-bar-value xsmall" id="bar-elite-label"></span>
+                    <span class="xsmall text-end" style="flex: 0 0 42px; font-size: 0.7rem;" id="bar-elite-label"></span>
                   </div>
-                  <div class="stats-bar-row" data-rarity="epic">
-                    <span class="stats-bar-label">Épica</span>
+                  <div class="d-flex align-items-center gap-1 mb-1" data-rarity="epic">
+                    <span class="xsmall" style="flex: 0 0 75px; font-size: 0.7rem;">Épica</span>
                     <div class="stats-bar-track">
                       <div class="stats-bar-fill rarity-epic" id="bar-epic"></div>
                     </div>
-                    <span class="stats-bar-value xsmall" id="bar-epic-label"></span>
+                    <span class="xsmall text-end" style="flex: 0 0 42px; font-size: 0.7rem;" id="bar-epic-label"></span>
                   </div>
-                  <div class="stats-bar-row" data-rarity="mythic">
-                    <span class="stats-bar-label">Mítica</span>
+                  <div class="d-flex align-items-center gap-1 mb-1" data-rarity="mythic">
+                    <span class="xsmall" style="flex: 0 0 75px; font-size: 0.7rem;">Mítica</span>
                     <div class="stats-bar-track">
                       <div class="stats-bar-fill rarity-mythic" id="bar-mythic"></div>
                     </div>
-                    <span class="stats-bar-value xsmall" id="bar-mythic-label"></span>
+                    <span class="xsmall text-end" style="flex: 0 0 42px; font-size: 0.7rem;" id="bar-mythic-label"></span>
                   </div>
-                  <div class="stats-bar-row" data-rarity="legendary">
-                    <span class="stats-bar-label">Legendaria</span>
+                  <div class="d-flex align-items-center gap-1" data-rarity="legendary">
+                    <span class="xsmall" style="flex: 0 0 75px; font-size: 0.7rem;">Legendaria</span>
                     <div class="stats-bar-track">
                       <div class="stats-bar-fill rarity-legendary" id="bar-legendary"></div>
                     </div>
-                    <span class="stats-bar-value xsmall" id="bar-legendary-label"></span>
+                    <span class="xsmall text-end" style="flex: 0 0 42px; font-size: 0.7rem;" id="bar-legendary-label"></span>
                   </div>
                 </div>
               </div>

@@ -58,9 +58,9 @@
 
           <!-- Dropdown perfil -->
           <div class="dropdown order-0 order-lg-1">
-            <button class="btn btn-profile" type="button" id="profileDropdown" data-bs-toggle="dropdown"
+            <button class="btn btn-outline-light rounded-pill d-flex align-items-center" type="button" id="profileDropdown" data-bs-toggle="dropdown"
               aria-expanded="false">
-              <img src="img/avatars/pokeball.png" alt="Avatar" class="avatar-navbar me-2" id="navbarAvatar">
+              <img src="img/avatars/pokeball.png" alt="Avatar" class="rounded-circle border me-2" id="navbarAvatar" width="28" height="28" style="object-fit:cover;">
               <span class="d-none d-sm-inline user-name" id="navbarUserName">
                 Entrenador
               </span>
@@ -69,7 +69,7 @@
             <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="profileDropdown">
               <li class="px-3 py-2">
                 <div class="d-flex align-items-center">
-                  <img src="img/avatars/pokeball.png" alt="Avatar" class="avatar-navbar me-2" id="dropdownAvatar">
+                  <img src="img/avatars/pokeball.png" alt="Avatar" class="rounded-circle border me-2" id="dropdownAvatar" width="36" height="36" style="object-fit:cover;">
                   <div class="min-w-0">
                     <div class="fw-semibold small text-truncate" id="dropdownUserName">Entrenador</div>
                     <div class="text-muted xsmall text-truncate" id="dropdownUserEmail">
@@ -125,27 +125,27 @@
                 entrenador@pokemarket.com
               </p>
 
-              <p class="mb-3 profile-bio small" id="profileBio">
+              <p class="mb-3 small" id="profileBio" style="max-width: 480px;">
                 Coleccionista de cartas Pokémon, cazador de grails y adicto a las ruletas legendarias.
               </p>
 
-              <div class="d-flex flex-wrap align-items-center gap-3 mb-3 profile-stats">
-                <div class="profile-stat">
-                  <span class="profile-stat-number" id="statCartasVenta">0</span>
-                  <span class="profile-stat-label">Cartas en venta</span>
+              <div class="d-flex flex-wrap align-items-center gap-4 mb-3">
+                <div class="d-flex flex-column">
+                  <span class="fw-bold" id="statCartasVenta">0</span>
+                  <span class="small text-muted">Cartas en venta</span>
                 </div>
-                <div class="profile-stat">
-                  <span class="profile-stat-number" id="statSeguidores">0</span>
-                  <span class="profile-stat-label">Seguidores</span>
+                <div class="d-flex flex-column">
+                  <span id="statSeguidores" class="fw-bold">0</span>
+                  <span class="small text-muted">Seguidores</span>
                 </div>
-                <div class="profile-stat">
-                  <span class="profile-stat-number" id="statSiguiendo">0</span>
-                  <span class="profile-stat-label">Siguiendo</span>
+                <div class="d-flex flex-column">
+                  <span id="statSiguiendo" class="fw-bold">0</span>
+                  <span class="small text-muted">Siguiendo</span>
                 </div>
               </div>
 
               <div class="d-flex flex-wrap gap-2 align-items-center">
-                <button class="btn btn-poke btn-sm profile-btn-animated" data-bs-toggle="modal"
+                <button class="btn btn-warning btn-sm fw-semibold rounded-pill profile-btn-animated" data-bs-toggle="modal"
                   data-bs-target="#editarPerfilModal">
                   <i class="bi bi-pencil-square me-1"></i>Editar perfil
                 </button>
@@ -195,7 +195,7 @@
             <div class="tab-pane fade show active" id="tab-venta" role="tabpanel" aria-labelledby="venta-tab">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <h2 class="h6 mb-0">Cartas en venta</h2>
-                <button class="btn btn-sm btn-poke profile-btn-animated" data-bs-toggle="modal"
+                <button class="btn btn-warning btn-sm fw-semibold rounded-pill profile-btn-animated" data-bs-toggle="modal"
                   data-bs-target="#selectCollectionCardModal">
                   <i class="bi bi-plus-lg me-1"></i>Añadir carta
                 </button>
@@ -285,44 +285,44 @@
               <div class="collapse mt-3" id="avatarPredeterminadoCollapse">
                 <div class="row g-3 justify-content-center">
                   <div class="col-3 d-flex justify-content-center">
-                    <img src="../img/avatars/pikachu.jpg" alt="Pikachu" class="avatar-option"
-                      data-avatar-default="../img/avatars/pikachu.jpg">
+                    <img src="../img/avatars/pikachu.jpg" alt="Pikachu" class="avatar-select rounded-circle border"
+                      data-avatar-default="../img/avatars/pikachu.jpg" width="70" height="70" style="object-fit:cover;">
                   </div>
                   <div class="col-3 d-flex justify-content-center">
-                    <img src="../img/avatars/Bulbasaur.jpeg" alt="Bulbasaur" class="avatar-option"
-                      data-avatar-default="../img/avatars/Bulbasaur.jpeg">
+                    <img src="../img/avatars/Bulbasaur.jpeg" alt="Bulbasaur" class="avatar-select rounded-circle border"
+                      data-avatar-default="../img/avatars/Bulbasaur.jpeg" width="70" height="70" style="object-fit:cover;">
                   </div>
                   <div class="col-3 d-flex justify-content-center">
-                    <img src="../img/avatars/charmander.jpg" alt="Charmander" class="avatar-option"
-                      data-avatar-default="../img/avatars/charmander.jpg">
+                    <img src="../img/avatars/charmander.jpg" alt="Charmander" class="avatar-select rounded-circle border"
+                      data-avatar-default="../img/avatars/charmander.jpg" width="70" height="70" style="object-fit:cover;">
                   </div>
                   <div class="col-3 d-flex justify-content-center">
-                    <img src="../img/avatars/squirtle.jpg" alt="Squirtle" class="avatar-option"
-                      data-avatar-default="../img/avatars/squirtle.jpg">
+                    <img src="../img/avatars/squirtle.jpg" alt="Squirtle" class="avatar-select rounded-circle border"
+                      data-avatar-default="../img/avatars/squirtle.jpg" width="70" height="70" style="object-fit:cover;">
                   </div>
                   <div class="col-3 d-flex justify-content-center">
-                    <img src="../img/avatars/jigglipuff.jpg" alt="Jigglypuff" class="avatar-option"
-                      data-avatar-default="../img/avatars/jigglipuff.jpg">
+                    <img src="../img/avatars/jigglipuff.jpg" alt="Jigglypuff" class="avatar-select rounded-circle border"
+                      data-avatar-default="../img/avatars/jigglipuff.jpg" width="70" height="70" style="object-fit:cover;">
                   </div>
                   <div class="col-3 d-flex justify-content-center">
-                    <img src="../img/avatars/meowth.jpeg" alt="Meowth" class="avatar-option"
-                      data-avatar-default="../img/avatars/meowth.jpeg">
+                    <img src="../img/avatars/meowth.jpeg" alt="Meowth" class="avatar-select rounded-circle border"
+                      data-avatar-default="../img/avatars/meowth.jpeg" width="70" height="70" style="object-fit:cover;">
                   </div>
                   <div class="col-3 d-flex justify-content-center">
-                    <img src="../img/avatars/psyduck.jpeg" alt="Psyduck" class="avatar-option"
-                      data-avatar-default="../img/avatars/psyduck.jpeg">
+                    <img src="../img/avatars/psyduck.jpeg" alt="Psyduck" class="avatar-select rounded-circle border"
+                      data-avatar-default="../img/avatars/psyduck.jpeg" width="70" height="70" style="object-fit:cover;">
                   </div>
                   <div class="col-3 d-flex justify-content-center">
-                    <img src="../img/avatars/snorlax.png" alt="Snorlax" class="avatar-option"
-                      data-avatar-default="../img/avatars/snorlax.png">
+                    <img src="../img/avatars/snorlax.png" alt="Snorlax" class="avatar-select rounded-circle border"
+                      data-avatar-default="../img/avatars/snorlax.png" width="70" height="70" style="object-fit:cover;">
                   </div>
                   <div class="col-3 d-flex justify-content-center">
-                    <img src="../img/avatars/eevee.jpg" alt="Eevee" class="avatar-option"
-                      data-avatar-default="../img/avatars/eevee.jpg">
+                    <img src="../img/avatars/eevee.jpg" alt="Eevee" class="avatar-select rounded-circle border"
+                      data-avatar-default="../img/avatars/eevee.jpg" width="70" height="70" style="object-fit:cover;">
                   </div>
                   <div class="col-3 d-flex justify-content-center">
-                    <img src="../img/avatars/pokeball.png" alt="Pokeball" class="avatar-option"
-                      data-avatar-default="../img/avatars/pokeball.png">
+                    <img src="../img/avatars/pokeball.png" alt="Pokeball" class="avatar-select rounded-circle border"
+                      data-avatar-default="../img/avatars/pokeball.png" width="70" height="70" style="object-fit:cover;">
                   </div>
                 </div>
               </div>
@@ -351,7 +351,7 @@
         </div>
         <div class="modal-footer border-0">
           <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-poke btn-sm" id="btnGuardarPerfil">Guardar cambios</button>
+          <button type="button" class="btn btn-warning btn-sm fw-semibold rounded-pill" id="btnGuardarPerfil">Guardar cambios</button>
         </div>
       </div>
     </div>

@@ -48,9 +48,9 @@
 
         <!-- Dropdown perfil -->
         <div class="dropdown">
-          <button class="btn btn-profile d-flex align-items-center" type="button" id="profileDropdown"
+          <button class="btn btn-outline-light rounded-pill d-flex align-items-center" type="button" id="profileDropdown"
             data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="img/avatars/pokeball.png" alt="Avatar" class="avatar-navbar me-2" id="navbarAvatar">
+            <img src="img/avatars/pokeball.png" alt="Avatar" class="rounded-circle border me-2" id="navbarAvatar" width="28" height="28" style="object-fit:cover;">
             <span class="d-none d-sm-inline user-name" id="navbarUserName">
               Entrenador
             </span>
@@ -59,7 +59,7 @@
           <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="profileDropdown">
             <li class="px-3 py-2">
               <div class="d-flex align-items-center">
-                <img src="img/avatars/pokeball.png" alt="Avatar" class="avatar-navbar me-2" id="dropdownAvatar">
+                <img src="img/avatars/pokeball.png" alt="Avatar" class="rounded-circle border me-2" id="dropdownAvatar" width="36" height="36" style="object-fit:cover;">
                 <div class="min-w-0">
                   <div class="fw-semibold small text-truncate" id="dropdownUserName">Entrenador</div>
                   <div class="text-muted xsmall text-truncate" id="dropdownUserEmail">
@@ -105,8 +105,7 @@
 
         <!-- Botón comprar créditos -->
         <div class="d-flex justify-content-center mb-3">
-          <button type="button" class="btn btn-buy-credits" data-bs-toggle="modal" data-bs-target="#creditShopModal">
-            <span class="btn-buy-credits-glow"></span>
+          <button type="button" class="btn btn-warning btn-lg fw-semibold rounded-pill" data-bs-toggle="modal" data-bs-target="#creditShopModal">
             <i class="bi bi-plus-circle-fill me-2"></i>Comprar monedas
           </button>
         </div>
@@ -120,16 +119,16 @@
                 <div class="roulette-choice-badge">Básica</div>
                 <h2 class="h6 mb-1">Ruleta Común</h2>
                 <p class="xsmall mb-2 text-muted">Solo cartas hasta Rara. Perfecta para farmear barato.</p>
-                <ul class="roulette-choice-tags xsmall mb-2">
-                  <li>Rangos: Común–Rara</li>
+                <ul class="list-unstyled ps-0 xsmall mb-2" style="margin-bottom: 0.35rem;">
+                  <li><span class="text-muted">•</span> Rangos: Común–Rara</li>
                   <li>
-                    Coste:
+                    <span class="text-muted">•</span> Coste:
                     <i class="bi bi-coin text-warning"></i>
                     20
                   </li>
                 </ul>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="roulette-choice-price d-flex align-items-center gap-1">
+                  <span class="fw-bold text-warning d-flex align-items-center gap-1">
                     <i class="bi bi-coin text-warning small"></i>
                     <span>20</span>
                   </span>
@@ -144,16 +143,16 @@
                 <div class="roulette-choice-badge">Progresión</div>
                 <h2 class="h6 mb-1">Ruleta Intermedia</h2>
                 <p class="xsmall mb-2 text-muted">Mezcla de cartas hasta Super rara.</p>
-                <ul class="roulette-choice-tags xsmall mb-2">
-                  <li>Rangos: Común–Super rara</li>
+                <ul class="list-unstyled ps-0 xsmall mb-2" style="margin-bottom: 0.35rem;">
+                  <li><span class="text-muted">•</span> Rangos: Común–Super rara</li>
                   <li>
-                    Coste:
+                    <span class="text-muted">•</span> Coste:
                     <i class="bi bi-coin text-warning"></i>
                     40
                   </li>
                 </ul>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="roulette-choice-price d-flex align-items-center gap-1">
+                  <span class="fw-bold text-warning d-flex align-items-center gap-1">
                     <i class="bi bi-coin text-warning small"></i>
                     <span>40</span>
                   </span>
@@ -168,16 +167,16 @@
                 <div class="roulette-choice-badge">Plus</div>
                 <h2 class="h6 mb-1">Ruleta Avanzada</h2>
                 <p class="xsmall mb-2 text-muted">Infrecuente a Élite. Menos morralla.</p>
-                <ul class="roulette-choice-tags xsmall mb-2">
-                  <li>Rangos: Infrecuente–Élite</li>
+                <ul class="list-unstyled ps-0 xsmall mb-2" style="margin-bottom: 0.35rem;">
+                  <li><span class="text-muted">•</span> Rangos: Infrecuente–Élite</li>
                   <li>
-                    Coste:
+                    <span class="text-muted">•</span> Coste:
                     <i class="bi bi-coin text-warning"></i>
                     80
                   </li>
                 </ul>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="roulette-choice-price d-flex align-items-center gap-1">
+                  <span class="fw-bold text-warning d-flex align-items-center gap-1">
                     <i class="bi bi-coin text-warning small"></i>
                     <span>80</span>
                   </span>
@@ -192,16 +191,16 @@
                 <div class="roulette-choice-badge">High roll</div>
                 <h2 class="h6 mb-1">Ruleta Experta</h2>
                 <p class="xsmall mb-2 text-muted">Rara a Épica. Buscando cartas fuertes.</p>
-                <ul class="roulette-choice-tags xsmall mb-2">
-                  <li>Rangos: Rara–Épica</li>
+                <ul class="list-unstyled ps-0 xsmall mb-2" style="margin-bottom: 0.35rem;">
+                  <li><span class="text-muted">•</span> Rangos: Rara–Épica</li>
                   <li>
-                    Coste:
+                    <span class="text-muted">•</span> Coste:
                     <i class="bi bi-coin text-warning"></i>
                     120
                   </li>
                 </ul>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="roulette-choice-price d-flex align-items-center gap-1">
+                  <span class="fw-bold text-warning d-flex align-items-center gap-1">
                     <i class="bi bi-coin text-warning small"></i>
                     <span>120</span>
                   </span>
@@ -216,16 +215,16 @@
                 <div class="roulette-choice-badge">Endgame</div>
                 <h2 class="h6 mb-1">Ruleta Mítica</h2>
                 <p class="xsmall mb-2 text-muted">Super rara a Mítica/Legendaria.</p>
-                <ul class="roulette-choice-tags xsmall mb-2">
-                  <li>Rangos: Super rara–Legendaria</li>
+                <ul class="list-unstyled ps-0 xsmall mb-2" style="margin-bottom: 0.35rem;">
+                  <li><span class="text-muted">•</span> Rangos: Super rara–Legendaria</li>
                   <li>
-                    Coste:
+                    <span class="text-muted">•</span> Coste:
                     <i class="bi bi-coin text-warning"></i>
                     200
                   </li>
                 </ul>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="roulette-choice-price d-flex align-items-center gap-1">
+                  <span class="fw-bold text-warning d-flex align-items-center gap-1">
                     <i class="bi bi-coin text-warning small"></i>
                     <span>200</span>
                   </span>
@@ -240,16 +239,16 @@
                 <div class="roulette-choice-badge">Insana</div>
                 <h2 class="h6 mb-1">Ruleta Legendaria</h2>
                 <p class="xsmall mb-2 text-muted">Élite a Legendaria. Más probabilidad de oro.</p>
-                <ul class="roulette-choice-tags xsmall mb-2">
-                  <li>Rangos: Élite–Legendaria</li>
+                <ul class="list-unstyled ps-0 xsmall mb-2" style="margin-bottom: 0.35rem;">
+                  <li><span class="text-muted">•</span> Rangos: Élite–Legendaria</li>
                   <li>
-                    Coste:
+                    <span class="text-muted">•</span> Coste:
                     <i class="bi bi-coin text-warning"></i>
                     400
                   </li>
                 </ul>
                 <div class="d-flex justify-content-between align-items-center">
-                  <span class="roulette-choice-price d-flex align-items-center gap-1">
+                  <span class="fw-bold text-warning d-flex align-items-center gap-1">
                     <i class="bi bi-coin text-warning small"></i>
                     <span>400</span>
                   </span>
@@ -346,9 +345,9 @@
                         <span>20</span>
                       </span>
                     </div>
-                    <button class="btn btn-poke btn-lg fw-semibold" id="btnSpin" disabled>
-                      <i class="bi bi-dice-5 me-1"></i>Girar 1 vez
-                    </button>
+                      <button class="btn btn-warning btn-lg fw-semibold rounded-pill" id="btnSpin" disabled>
+                        <i class="bi bi-dice-5 me-1"></i>Girar 1 vez
+                      </button>
                   </div>
                 </div>
               </div>
@@ -456,7 +455,7 @@
                       <i class="bi bi-coin text-warning small"></i>
                       <span class="small fw-semibold daily-price">120</span>
                     </div>
-                    <button class="btn btn-sm btn-poke daily-buy-btn tienda-dia-btn-comprar">Comprar</button>
+                    <button class="btn btn-warning btn-sm fw-semibold rounded-pill daily-buy-btn tienda-dia-btn-comprar">Comprar</button>
                   </div>
                   <p class="xsmall text-muted mt-1 mb-0 daily-stock">Stock: ∞</p>
                 </div>
@@ -509,7 +508,7 @@
                             <i class="bi bi-coin text-warning small"></i>
                             <span class="small fw-semibold">60</span>
                           </div>
-                          <button class="btn btn-sm btn-poke pack-open-btn" data-pack-id="basic">
+                          <button class="btn btn-warning btn-sm fw-semibold rounded-pill pack-open-btn" data-pack-id="basic">
                             Abrir sobre
                           </button>
                         </div>
@@ -544,7 +543,7 @@
                             <i class="bi bi-coin text-warning small"></i>
                             <span class="small fw-semibold">180</span>
                           </div>
-                          <button class="btn btn-sm btn-poke pack-open-btn" data-pack-id="competitive">
+                          <button class="btn btn-warning btn-sm fw-semibold rounded-pill pack-open-btn" data-pack-id="competitive">
                             Abrir sobre
                           </button>
                         </div>
@@ -579,7 +578,7 @@
                             <i class="bi bi-coin text-warning small"></i>
                             <span class="small fw-semibold">480</span>
                           </div>
-                          <button class="btn btn-sm btn-poke pack-open-btn" data-pack-id="fire">
+                          <button class="btn btn-warning btn-sm fw-semibold rounded-pill pack-open-btn" data-pack-id="fire">
                             Abrir sobre
                           </button>
                         </div>
@@ -614,7 +613,7 @@
                             <i class="bi bi-coin text-warning small"></i>
                             <span class="small fw-semibold">1200</span>
                           </div>
-                          <button class="btn btn-sm btn-poke pack-open-btn" data-pack-id="grail">
+                          <button class="btn btn-warning btn-sm fw-semibold rounded-pill pack-open-btn" data-pack-id="grail">
                             Abrir sobre
                           </button>
                         </div>
@@ -758,7 +757,7 @@
               <p class="xsmall text-muted mb-1" id="packRevealCounter">
                 Carta 1 de 6
               </p>
-              <button class="btn btn-poke btn-sm" id="btnNextReveal">
+              <button class="btn btn-warning btn-sm fw-semibold rounded-pill" id="btnNextReveal">
                 Ver siguiente carta
               </button>
             </div>
@@ -781,7 +780,7 @@
           <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">
             Cerrar
           </button>
-          <a href="Pages/Colección.html" class="btn btn-poke btn-sm">
+          <a href="Pages/Colección.html" class="btn btn-warning btn-sm fw-semibold rounded-pill">
             Ver colección
           </a>
         </div>
@@ -1303,13 +1302,13 @@
           if (!rd) return;
           const pct = (p * 100).toFixed(1);
           const li = document.createElement('li');
-          li.className = 'stats-bar-row mb-1';
+          li.className = 'd-flex align-items-center gap-1 mb-1';
           li.innerHTML = `
-        <span class="stats-bar-label">${rd.label}</span>
+        <span class="xsmall" style="flex: 0 0 75px; font-size: 0.7rem;">${rd.label}</span>
         <div class="stats-bar-track">
           <div class="stats-bar-fill rarity-${rd.key}" style="width:${pct}%"></div>
         </div>
-        <span class="stats-bar-value">${pct}%</span>
+        <span class="xsmall text-end" style="flex: 0 0 42px; font-size: 0.7rem;">${pct}%</span>
       `;
           baseProbList.appendChild(li);
         });
@@ -1324,13 +1323,13 @@
           const count = statsCounts[rd.key] || 0;
           const pct = total > 0 ? ((count / total) * 100).toFixed(1) : '0.0';
           const li = document.createElement('li');
-          li.className = 'stats-bar-row mb-1';
+          li.className = 'd-flex align-items-center gap-1 mb-1';
           li.innerHTML = `
-        <span class="stats-bar-label">${rd.label}</span>
+        <span class="xsmall" style="flex: 0 0 75px; font-size: 0.7rem;">${rd.label}</span>
         <div class="stats-bar-track">
           <div class="stats-bar-fill rarity-${rd.key}" style="width:${pct}%"></div>
         </div>
-        <span class="stats-bar-value">${pct}%</span>
+        <span class="xsmall text-end" style="flex: 0 0 42px; font-size: 0.7rem;">${pct}%</span>
       `;
           currentProbList.appendChild(li);
         });
