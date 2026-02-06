@@ -288,21 +288,21 @@
               <div class="card-body roulette-body">
                 <!-- Rarezas -->
                 <div class="roulette-rarities d-flex flex-wrap justify-content-between align-items-center mb-3">
-                  <div class="rarity-pill rarity-1"><span class="rarity-color-dot"></span>Común</div>
-                  <div class="rarity-pill rarity-2"><span class="rarity-color-dot"></span>Infrecuente</div>
-                  <div class="rarity-pill rarity-3"><span class="rarity-color-dot"></span>Rara</div>
-                  <div class="rarity-pill rarity-4"><span class="rarity-color-dot"></span>Super rara</div>
-                  <div class="rarity-pill rarity-5"><span class="rarity-color-dot"></span>Élite</div>
-                  <div class="rarity-pill rarity-6"><span class="rarity-color-dot"></span>Épica</div>
-                  <div class="rarity-pill rarity-7"><span class="rarity-color-dot"></span>Mítica</div>
-                  <div class="rarity-pill rarity-8"><span class="rarity-color-dot"></span>Legendaria</div>
+                  <div class="rarity-pill rarity-1 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Común</div>
+                  <div class="rarity-pill rarity-2 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Infrecuente</div>
+                  <div class="rarity-pill rarity-3 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Rara</div>
+                  <div class="rarity-pill rarity-4 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Super rara</div>
+                  <div class="rarity-pill rarity-5 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Élite</div>
+                  <div class="rarity-pill rarity-6 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Épica</div>
+                  <div class="rarity-pill rarity-7 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Mítica</div>
+                  <div class="rarity-pill rarity-8 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Legendaria</div>
                 </div>
 
                 <!-- Ventana ruleta -->
                 <div class="roulette-window-wrapper mb-3">
                   <div class="roulette-highlight"></div>
                   <div class="roulette-window">
-                    <div class="roulette-strip" id="rouletteStrip"></div>
+                    <div class="roulette-strip d-flex gap-1 p-1" id="rouletteStrip"></div>
                   </div>
                   <div class="roulette-bottom-glow"></div>
                 </div>
@@ -1302,11 +1302,11 @@
           const li = document.createElement('li');
           li.className = 'd-flex align-items-center gap-1 mb-1';
           li.innerHTML = `
-        <span class="xsmall" style="flex: 0 0 75px; font-size: 0.7rem;">${rd.label}</span>
+        <span class="xsmall flex-shrink-0" style="width:75px; font-size:0.7rem;">${rd.label}</span>
         <div class="stats-bar-track">
           <div class="stats-bar-fill rarity-${rd.key}" style="width:${pct}%"></div>
         </div>
-        <span class="xsmall text-end" style="flex: 0 0 42px; font-size: 0.7rem;">${pct}%</span>
+        <span class="xsmall text-end flex-shrink-0" style="width:42px; font-size:0.7rem;">${pct}%</span>
       `;
           baseProbList.appendChild(li);
         });
@@ -1323,11 +1323,11 @@
           const li = document.createElement('li');
           li.className = 'd-flex align-items-center gap-1 mb-1';
           li.innerHTML = `
-        <span class="xsmall" style="flex: 0 0 75px; font-size: 0.7rem;">${rd.label}</span>
+        <span class="xsmall flex-shrink-0" style="width:75px; font-size:0.7rem;">${rd.label}</span>
         <div class="stats-bar-track">
           <div class="stats-bar-fill rarity-${rd.key}" style="width:${pct}%"></div>
         </div>
-        <span class="xsmall text-end" style="flex: 0 0 42px; font-size: 0.7rem;">${pct}%</span>
+        <span class="xsmall text-end flex-shrink-0" style="width:42px; font-size:0.7rem;">${pct}%</span>
       `;
           currentProbList.appendChild(li);
         });
@@ -1360,9 +1360,9 @@
         items.forEach(card => {
           const rd = rarityDefs.find(r => r.key === card.rarityInternal) || rarityDefs[0];
           const div = document.createElement('div');
-          div.className = `roulette-item rarity-${card.rarityInternal}`;
+          div.className = `roulette-item rarity-${card.rarityInternal} d-flex align-items-center justify-content-center`;
           div.innerHTML = `
-        <div class="roulette-item-inner">
+        <div class="roulette-item-inner d-flex flex-column gap-1 w-100">
           <div class="d-flex justify-content-between align-items-center">
             <span class="roulette-item-rarity">${rd.label}</span>
             <img src="${card.image || 'img/avatars/pokeball.png'}"
