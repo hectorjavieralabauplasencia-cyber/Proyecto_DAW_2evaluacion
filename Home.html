@@ -19,13 +19,13 @@
 <body class="bg-pokeballs">
 
   <!-- NAVBAR PRINCIPAL INDEX -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-main sticky-top shadow-sm">
     <div class="container d-flex align-items-center justify-content-between">
 
       <!-- Lado izquierdo: logo + nombre + botón colección -->
       <div class="d-flex align-items-center gap-3">
         <a class="navbar-brand d-flex align-items-center gap-2 mb-0" href="Home.html">
-          <img src="img/Masterball.png" alt="Masterball" style="width: 32px; height: 32px;">
+          <div class="pokeball-logo rounded-circle" style="width: 32px; height: 32px;"></div>
           <span class="brand-text">PokeMarket</span>
         </a>
         <a href="Pages/Colección.html"
@@ -35,7 +35,7 @@
         </a>
       </div>
 
-      <!-- Lado derecho: créditos + tema + perfil -->
+      <!-- Lado derecho: créditos + perfil -->
       <div class="d-flex align-items-center gap-3 flex-wrap justify-content-end">
 
         <!-- Créditos globales: solo icono + número -->
@@ -44,25 +44,24 @@
           <span class="fw-bold">0</span>
         </div>
 
-
-
         <!-- Dropdown perfil -->
         <div class="dropdown">
-          <button class="btn btn-outline-light rounded-pill d-flex align-items-center" type="button" id="profileDropdown"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="img/avatars/pokeball.png" alt="Avatar" class="rounded-circle border me-2" id="navbarAvatar" width="28" height="28" style="object-fit:cover;">
+          <button class="btn btn-outline-light btn-profile rounded-pill d-flex align-items-center gap-2 px-3"
+            type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="img/avatars/pokeball.png" alt="Avatar" class="avatar-navbar rounded-circle" id="navbarAvatar">
             <span class="d-none d-sm-inline user-name" id="navbarUserName">
               Entrenador
             </span>
-            <i class="bi bi-caret-down-fill ms-1 small d-none d-sm-inline"></i>
+            <i class="bi bi-caret-down-fill small d-none d-sm-inline"></i>
           </button>
           <ul class="dropdown-menu dropdown-menu-end shadow-sm" aria-labelledby="profileDropdown">
             <li class="px-3 py-2">
               <div class="d-flex align-items-center">
-                <img src="img/avatars/pokeball.png" alt="Avatar" class="rounded-circle border me-2" id="dropdownAvatar" width="36" height="36" style="object-fit:cover;">
+                <img src="img/avatars/pokeball.png" alt="Avatar" class="rounded-circle border me-2" id="dropdownAvatar"
+                  width="36" height="36" style="object-fit:cover;">
                 <div class="min-w-0">
                   <div class="fw-semibold small text-truncate" id="dropdownUserName">Entrenador</div>
-                  <div class="text-muted xsmall text-truncate" id="dropdownUserEmail">
+                  <div class="text-muted" style="font-size:0.7rem" id="dropdownUserEmail">
                     entrenador@pokemarket.com
                   </div>
                 </div>
@@ -94,7 +93,7 @@
       <!-- SECCIÓN RULETA PRINCIPAL -->
       <section class="mb-4">
         <header class="text-center mb-3 roulette-header">
-          <p class="text-uppercase xsmall text-muted mb-1">Casino de cartas</p>
+          <p class="text-uppercase text-muted mb-1" style="font-size:0.7rem;">Casino de cartas</p>
           <h1 class="h3 fw-bold mb-1">Ruletas Insanas de PokeMarket</h1>
           <p class="small text-muted mb-0">
             Gira la ruleta, sube de rareza y convierte tus
@@ -105,7 +104,8 @@
 
         <!-- Botón comprar créditos -->
         <div class="d-flex justify-content-center mb-3">
-          <button type="button" class="btn btn-warning btn-lg fw-semibold rounded-pill" data-bs-toggle="modal" data-bs-target="#creditShopModal">
+          <button type="button" class="btn btn-warning btn-lg fw-semibold rounded-pill px-4" data-bs-toggle="modal"
+            data-bs-target="#creditShopModal">
             <i class="bi bi-plus-circle-fill me-2"></i>Comprar monedas
           </button>
         </div>
@@ -113,26 +113,25 @@
         <!-- Selector de ruletas -->
         <section class="roulette-selector mb-4">
           <div class="row g-3">
+
             <!-- Común -->
             <div class="col-12 col-md-6 col-xl-4">
               <article class="card p-3 h-100 rounded-3 roulette-choice-card active" data-wheel="common">
-                <div class="mb-2"><span class="badge bg-secondary text-muted small">Básica</span></div>
+                <div class="mb-2"><span class="badge bg-secondary small">Básica</span></div>
                 <h2 class="h6 mb-1">Ruleta Común</h2>
-                <p class="xsmall mb-2 text-muted">Solo cartas hasta Rara. Perfecta para farmear barato.</p>
-                <ul class="list-unstyled ps-0 xsmall mb-2" style="margin-bottom: 0.35rem;">
-                  <li><span class="text-muted">•</span> Rangos: Común–Rara</li>
-                  <li>
-                    <span class="text-muted">•</span> Coste:
-                    <i class="bi bi-coin text-warning"></i>
-                    20
-                  </li>
+                <p class="text-muted mb-2" style="font-size:0.75rem;">Solo cartas hasta Rara. Perfecta para farmear
+                  barato.</p>
+                <ul class="list-unstyled ps-0 mb-2" style="font-size:0.75rem;">
+                  <li>• Rangos: Común–Rara</li>
+                  <li>• Coste: <i class="bi bi-coin text-warning"></i> 20</li>
                 </ul>
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="fw-bold text-warning d-flex align-items-center gap-1">
                     <i class="bi bi-coin text-warning small"></i>
                     <span>20</span>
                   </span>
-                  <span class="badge bg-secondary-subtle text-secondary-emphasis xsmall">Baja inversión</span>
+                  <span class="badge bg-secondary-subtle text-secondary-emphasis" style="font-size:0.7rem;">Baja
+                    inversión</span>
                 </div>
               </article>
             </div>
@@ -140,23 +139,19 @@
             <!-- Intermedia -->
             <div class="col-12 col-md-6 col-xl-4">
               <article class="card p-3 h-100 rounded-3 roulette-choice-card" data-wheel="mid">
-                <div class="mb-2"><span class="badge bg-secondary text-muted small">Progresión</span></div>
+                <div class="mb-2"><span class="badge bg-secondary small">Progresión</span></div>
                 <h2 class="h6 mb-1">Ruleta Intermedia</h2>
-                <p class="xsmall mb-2 text-muted">Mezcla de cartas hasta Super rara.</p>
-                <ul class="list-unstyled ps-0 xsmall mb-2" style="margin-bottom: 0.35rem;">
-                  <li><span class="text-muted">•</span> Rangos: Común–Super rara</li>
-                  <li>
-                    <span class="text-muted">•</span> Coste:
-                    <i class="bi bi-coin text-warning"></i>
-                    40
-                  </li>
+                <p class="text-muted mb-2" style="font-size:0.75rem;">Mezcla de cartas hasta Super rara.</p>
+                <ul class="list-unstyled ps-0 mb-2" style="font-size:0.75rem;">
+                  <li>• Rangos: Común–Super rara</li>
+                  <li>• Coste: <i class="bi bi-coin text-warning"></i> 40</li>
                 </ul>
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="fw-bold text-warning d-flex align-items-center gap-1">
                     <i class="bi bi-coin text-warning small"></i>
                     <span>40</span>
                   </span>
-                  <span class="badge bg-info-subtle text-info-emphasis xsmall">Mejor media</span>
+                  <span class="badge bg-info-subtle text-info-emphasis" style="font-size:0.7rem;">Mejor media</span>
                 </div>
               </article>
             </div>
@@ -164,23 +159,20 @@
             <!-- Avanzada -->
             <div class="col-12 col-md-6 col-xl-4">
               <article class="card p-3 h-100 rounded-3 roulette-choice-card" data-wheel="advanced">
-                <div class="mb-2"><span class="badge bg-secondary text-muted small">Plus</span></div>
+                <div class="mb-2"><span class="badge bg-secondary small">Plus</span></div>
                 <h2 class="h6 mb-1">Ruleta Avanzada</h2>
-                <p class="xsmall mb-2 text-muted">Infrecuente a Élite. Menos morralla.</p>
-                <ul class="list-unstyled ps-0 xsmall mb-2" style="margin-bottom: 0.35rem;">
-                  <li><span class="text-muted">•</span> Rangos: Infrecuente–Élite</li>
-                  <li>
-                    <span class="text-muted">•</span> Coste:
-                    <i class="bi bi-coin text-warning"></i>
-                    80
-                  </li>
+                <p class="text-muted mb-2" style="font-size:0.75rem;">Infrecuente a Élite. Menos morralla.</p>
+                <ul class="list-unstyled ps-0 mb-2" style="font-size:0.75rem;">
+                  <li>• Rangos: Infrecuente–Élite</li>
+                  <li>• Coste: <i class="bi bi-coin text-warning"></i> 80</li>
                 </ul>
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="fw-bold text-warning d-flex align-items-center gap-1">
                     <i class="bi bi-coin text-warning small"></i>
                     <span>80</span>
                   </span>
-                  <span class="badge bg-primary-subtle text-primary-emphasis xsmall">Valor constante</span>
+                  <span class="badge bg-primary-subtle text-primary-emphasis" style="font-size:0.7rem;">Valor
+                    constante</span>
                 </div>
               </article>
             </div>
@@ -188,23 +180,20 @@
             <!-- Experta -->
             <div class="col-12 col-md-6 col-xl-4">
               <article class="card p-3 h-100 rounded-3 roulette-choice-card" data-wheel="expert">
-                <div class="mb-2"><span class="badge bg-secondary text-muted small">High roll</span></div>
+                <div class="mb-2"><span class="badge bg-secondary small">High roll</span></div>
                 <h2 class="h6 mb-1">Ruleta Experta</h2>
-                <p class="xsmall mb-2 text-muted">Rara a Épica. Buscando cartas fuertes.</p>
-                <ul class="list-unstyled ps-0 xsmall mb-2" style="margin-bottom: 0.35rem;">
-                  <li><span class="text-muted">•</span> Rangos: Rara–Épica</li>
-                  <li>
-                    <span class="text-muted">•</span> Coste:
-                    <i class="bi bi-coin text-warning"></i>
-                    120
-                  </li>
+                <p class="text-muted mb-2" style="font-size:0.75rem;">Rara a Épica. Buscando cartas fuertes.</p>
+                <ul class="list-unstyled ps-0 mb-2" style="font-size:0.75rem;">
+                  <li>• Rangos: Rara–Épica</li>
+                  <li>• Coste: <i class="bi bi-coin text-warning"></i> 120</li>
                 </ul>
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="fw-bold text-warning d-flex align-items-center gap-1">
                     <i class="bi bi-coin text-warning small"></i>
                     <span>120</span>
                   </span>
-                  <span class="badge bg-warning-subtle text-warning-emphasis xsmall">High risk</span>
+                  <span class="badge bg-warning-subtle text-warning-emphasis" style="font-size:0.7rem;">High
+                    risk</span>
                 </div>
               </article>
             </div>
@@ -212,50 +201,46 @@
             <!-- Mítica -->
             <div class="col-12 col-md-6 col-xl-4">
               <article class="card p-3 h-100 rounded-3 roulette-choice-card" data-wheel="mythic">
-                <div class="mb-2"><span class="badge bg-secondary text-muted small">Endgame</span></div>
+                <div class="mb-2"><span class="badge bg-secondary small">Endgame</span></div>
                 <h2 class="h6 mb-1">Ruleta Mítica</h2>
-                <p class="xsmall mb-2 text-muted">Super rara a Mítica/Legendaria.</p>
-                <ul class="list-unstyled ps-0 xsmall mb-2" style="margin-bottom: 0.35rem;">
-                  <li><span class="text-muted">•</span> Rangos: Super rara–Legendaria</li>
-                  <li>
-                    <span class="text-muted">•</span> Coste:
-                    <i class="bi bi-coin text-warning"></i>
-                    200
-                  </li>
+                <p class="text-muted mb-2" style="font-size:0.75rem;">Super rara a Mítica/Legendaria.</p>
+                <ul class="list-unstyled ps-0 mb-2" style="font-size:0.75rem;">
+                  <li>• Rangos: Super rara–Legendaria</li>
+                  <li>• Coste: <i class="bi bi-coin text-warning"></i> 200</li>
                 </ul>
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="fw-bold text-warning d-flex align-items-center gap-1">
                     <i class="bi bi-coin text-warning small"></i>
                     <span>200</span>
                   </span>
-                  <span class="badge bg-danger-subtle text-danger-emphasis xsmall">Muy volátil</span>
+                  <span class="badge bg-danger-subtle text-danger-emphasis" style="font-size:0.7rem;">Muy
+                    volátil</span>
                 </div>
               </article>
             </div>
 
             <!-- Legendaria -->
             <div class="col-12 col-md-6 col-xl-4">
-              <article class="card p-3 h-100 rounded-3 roulette-choice-card legendary" data-wheel="legendary">
-                <div class="mb-2"><span class="badge bg-secondary text-muted small">Insana</span></div>
+              <article class="card p-3 h-100 rounded-3 roulette-choice-card roulette-choice-card-legendary"
+                data-wheel="legendary">
+                <div class="mb-2"><span class="badge bg-secondary small">Insana</span></div>
                 <h2 class="h6 mb-1">Ruleta Legendaria</h2>
-                <p class="xsmall mb-2 text-muted">Élite a Legendaria. Más probabilidad de oro.</p>
-                <ul class="list-unstyled ps-0 xsmall mb-2" style="margin-bottom: 0.35rem;">
-                  <li><span class="text-muted">•</span> Rangos: Élite–Legendaria</li>
-                  <li>
-                    <span class="text-muted">•</span> Coste:
-                    <i class="bi bi-coin text-warning"></i>
-                    400
-                  </li>
+                <p class="text-muted mb-2" style="font-size:0.75rem;">Élite a Legendaria. Más probabilidad de oro.</p>
+                <ul class="list-unstyled ps-0 mb-2" style="font-size:0.75rem;">
+                  <li>• Rangos: Élite–Legendaria</li>
+                  <li>• Coste: <i class="bi bi-coin text-warning"></i> 400</li>
                 </ul>
                 <div class="d-flex justify-content-between align-items-center">
                   <span class="fw-bold text-warning d-flex align-items-center gap-1">
                     <i class="bi bi-coin text-warning small"></i>
                     <span>400</span>
                   </span>
-                  <span class="badge bg-warning-subtle text-warning-emphasis xsmall">Solo valientes</span>
+                  <span class="badge bg-warning-subtle text-warning-emphasis" style="font-size:0.7rem;">Solo
+                    valientes</span>
                 </div>
               </article>
             </div>
+
           </div>
         </section>
 
@@ -266,8 +251,8 @@
           <div class="col-lg-8">
             <section class="roulette-card card border-0 shadow-lg rounded-4">
               <div class="card-header border-0 roulette-card-header">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+                  <div class="d-flex flex-wrap gap-2">
                     <span class="badge bg-danger-subtle text-danger-emphasis xsmall me-2">
                       <i class="bi bi-lightning-charge-fill me-1"></i>Ruleta activa
                     </span>
@@ -277,7 +262,8 @@
                   </div>
                   <div class="text-end">
                     <span class="xsmall text-muted d-block">Balance</span>
-                    <span class="small fw-semibold text-success d-flex align-items-center justify-content-end gap-1"
+                    <span
+                      class="small fw-semibold text-success d-flex align-items-center justify-content-end gap-1"
                       id="balanceCredits">
                       <i class="bi bi-coin text-warning small"></i>
                       <span>0</span>
@@ -287,15 +273,24 @@
               </div>
               <div class="card-body roulette-body">
                 <!-- Rarezas -->
-                <div class="roulette-rarities d-flex flex-wrap justify-content-between align-items-center mb-3">
-                  <div class="rarity-pill rarity-1 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Común</div>
-                  <div class="rarity-pill rarity-2 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Infrecuente</div>
-                  <div class="rarity-pill rarity-3 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Rara</div>
-                  <div class="rarity-pill rarity-4 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Super rara</div>
-                  <div class="rarity-pill rarity-5 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Élite</div>
-                  <div class="rarity-pill rarity-6 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Épica</div>
-                  <div class="rarity-pill rarity-7 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Mítica</div>
-                  <div class="rarity-pill rarity-8 d-inline-flex align-items-center gap-2 px-2 py-1"><span class="rarity-color-dot"></span>Legendaria</div>
+                <div
+                  class="roulette-rarities d-flex flex-wrap justify-content-between align-items-center mb-3 gap-1">
+                  <div class="rarity-pill rarity-1 d-inline-flex align-items-center gap-2 px-2 py-1"><span
+                      class="rarity-color-dot"></span>Común</div>
+                  <div class="rarity-pill rarity-2 d-inline-flex align-items-center gap-2 px-2 py-1"><span
+                      class="rarity-color-dot"></span>Infrecuente</div>
+                  <div class="rarity-pill rarity-3 d-inline-flex align-items-center gap-2 px-2 py-1"><span
+                      class="rarity-color-dot"></span>Rara</div>
+                  <div class="rarity-pill rarity-4 d-inline-flex align-items-center gap-2 px-2 py-1"><span
+                      class="rarity-color-dot"></span>Super rara</div>
+                  <div class="rarity-pill rarity-5 d-inline-flex align-items-center gap-2 px-2 py-1"><span
+                      class="rarity-color-dot"></span>Élite</div>
+                  <div class="rarity-pill rarity-6 d-inline-flex align-items-center gap-2 px-2 py-1"><span
+                      class="rarity-color-dot"></span>Épica</div>
+                  <div class="rarity-pill rarity-7 d-inline-flex align-items-center gap-2 px-2 py-1"><span
+                      class="rarity-color-dot"></span>Mítica</div>
+                  <div class="rarity-pill rarity-8 d-inline-flex align-items-center gap-2 px-2 py-1"><span
+                      class="rarity-color-dot"></span>Legendaria</div>
                 </div>
 
                 <!-- Ventana ruleta -->
@@ -319,7 +314,8 @@
                   <div class="d-flex align-items-center gap-2 flex-wrap">
                     <div class="d-flex align-items-center gap-1">
                       <span class="xsmall text-muted">Auto giros:</span>
-                      <select class="form-select form-select-sm roulette-autospins-select" id="autoCount">
+                      <select class="form-select form-select-sm roulette-autospins-select" id="autoCount"
+                        style="width:auto;">
                         <option value="5">5 giros</option>
                         <option value="10" selected>10 giros</option>
                         <option value="15">15 giros</option>
@@ -338,23 +334,28 @@
                     </div>
                   </div>
                   <div class="text-end">
-                    <div class="xsmall text-muted mb-1 d-flex align-items-center justify-content-end gap-1">
+                    <div
+                      class="xsmall text-muted mb-1 d-flex align-items-center justify-content-end gap-1">
                       <span>Coste por giro:</span>
-                      <span class="text-warning fw-semibold d-flex align-items-center gap-1" id="spinCost">
+                      <span
+                        class="text-warning fw-semibold d-flex align-items-center gap-1"
+                        id="spinCost">
                         <i class="bi bi-coin text-warning small"></i>
                         <span>20</span>
                       </span>
                     </div>
-                      <button class="btn btn-warning btn-lg fw-semibold rounded-pill" id="btnSpin" disabled>
-                        <i class="bi bi-dice-5 me-1"></i>Girar 1 vez
-                      </button>
+                    <button class="btn btn-warning btn-lg fw-semibold rounded-pill" id="btnSpin"
+                      disabled>
+                      <i class="bi bi-dice-5 me-1"></i>Girar 1 vez
+                    </button>
                   </div>
                 </div>
               </div>
 
               <div class="card-footer border-0 roulette-footer xsmall text-muted">
                 Los objetos ganados se añaden automáticamente a tu colección. Puedes gestionarlos desde la página de
-                <a href="Pages/Colección.html" class="text-warning text-decoration-none fw-semibold">Colección</a>.
+                <a href="Pages/Colección.html"
+                  class="text-warning text-decoration-none fw-semibold">Colección</a>.
               </div>
             </section>
           </div>
@@ -378,7 +379,8 @@
 
             <section class="card border-0 shadow-sm rounded-4">
               <div class="card-body">
-                <h2 class="h6 fw-semibold mb-2"><i class="bi bi-trophy-fill text-warning me-1"></i>Últimos drops épicos
+                <h2 class="h6 fw-semibold mb-2"><i
+                    class="bi bi-trophy-fill text-warning me-1"></i>Últimos drops épicos
                 </h2>
                 <ul class="list-unstyled mb-0 xsmall" id="lastDrops"></ul>
               </div>
@@ -399,7 +401,8 @@
               monedas.</p>
           </div>
           <!-- Badge créditos tienda: solo icono + número -->
-          <span class="badge bg-dark-subtle text-light-emphasis xsmall d-flex align-items-center gap-1"
+          <span
+            class="badge bg-dark-subtle text-light-emphasis xsmall d-flex align-items-center gap-1"
             id="shopCredits">
             <i class="bi bi-coin text-warning small"></i>
             <span>0</span>
@@ -409,7 +412,8 @@
 
       <!-- Cartas diarias -->
       <section class="card border-0 shadow-sm mb-4 tienda-section">
-        <div class="card-header border-0 bg-transparent d-flex flex-wrap justify-content-between align-items-center">
+        <div
+          class="card-header border-0 bg-transparent d-flex flex-wrap justify-content-between align-items-center">
           <div>
             <h3 class="h6 mb-1 text-uppercase text-muted xsmall">Selección diaria</h3>
             <h4 class="h5 mb-0 fw-semibold">Cartas destacadas de hoy</h4>
@@ -418,10 +422,12 @@
           </div>
           <div class="d-flex flex-column align-items-end gap-1">
             <div class="d-flex align-items-center gap-2">
-              <button class="btn btn-sm btn-outline-success d-flex align-items-center gap-2" id="btnRefreshDaily">
+              <button class="btn btn-sm btn-outline-success d-flex align-items-center gap-2"
+                id="btnRefreshDaily">
                 <i class="bi bi-arrow-clockwise spin"></i>
                 <span class="xsmall fw-semibold text-uppercase">Recargar tienda</span>
-                <span class="badge bg-dark-subtle text-warning-emphasis xsmall d-flex align-items-center gap-1">
+                <span
+                  class="badge bg-dark-subtle text-warning-emphasis xsmall d-flex align-items-center gap-1">
                   <i class="bi bi-coin text-warning"></i>
                   <span id="refreshCostLabel">50</span>
                 </span>
@@ -438,12 +444,14 @@
             <div class="col-6 col-md-4 col-lg-3 d-none" id="dailyCardTemplate">
               <article class="card card-carta h-100 tienda-card-dia">
                 <div class="card-carta-frame">
-                  <div class="carta-img-placeholder d-flex align-items-center justify-content-center">
+                  <div
+                    class="carta-img-placeholder d-flex align-items-center justify-content-center">
                     <span class="xsmall text-muted">Imagen carta</span>
                   </div>
                 </div>
                 <div class="card-body p-2">
-                  <div class="d-flex justify-content-between align-items-start mb-1">
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-1">
                     <h5 class="small fw-semibold mb-0 text-truncate daily-name">Nombre carta</h5>
                     <span class="badge xsmall daily-rarity">Rara</span>
                   </div>
@@ -453,7 +461,8 @@
                       <i class="bi bi-coin text-warning small"></i>
                       <span class="small fw-semibold daily-price">120</span>
                     </div>
-                    <button class="btn btn-warning btn-sm fw-semibold rounded-pill daily-buy-btn tienda-dia-btn-comprar">Comprar</button>
+                    <button
+                      class="btn btn-warning btn-sm fw-semibold rounded-pill daily-buy-btn tienda-dia-btn-comprar">Comprar</button>
                   </div>
                   <p class="xsmall text-muted mt-1 mb-0 daily-stock">Stock: ∞</p>
                 </div>
@@ -467,7 +476,8 @@
 
       <!-- SECCIÓN SOBRES -->
       <section class="card border-0 shadow-sm mb-4 tienda-section">
-        <div class="card-header border-0 bg-transparent d-flex flex-wrap justify-content-between align-items-center">
+        <div
+          class="card-header border-0 bg-transparent d-flex flex-wrap justify-content-between align-items-center">
           <div>
             <p class="text-uppercase xsmall text-muted mb-1">Fábrica de dopamina</p>
             <h3 class="h5 mb-1 fw-semibold">Sobres PokeMarket – Abre y reza</h3>
@@ -480,20 +490,27 @@
             <!-- Lista de sobres -->
             <div class="col-12">
               <div class="row g-3" id="packsGrid">
+
                 <!-- Sobre básico -->
                 <div class="col-12 col-md-6 col-xl-3">
                   <article class="card tienda-pack-card h-100" data-pack-id="basic">
                     <div class="card-body d-flex gap-3">
-                      <div class="flex-shrink-0 rounded-3 anim-pack-float d-flex align-items-center justify-content-center bg-secondary-subtle" style="width:64px;height:92px;">
-                        <div class="rounded-circle bg-white text-dark d-flex align-items-center justify-content-center" style="width:26px;height:26px;font-weight:700;">B</div>
+                      <div
+                        class="flex-shrink-0 rounded-3 anim-pack-float d-flex align-items-center justify-content-center bg-secondary-subtle"
+                        style="width:64px;height:92px;">
+                        <div
+                          class="rounded-circle bg-white text-dark d-flex align-items-center justify-content-center"
+                          style="width:26px;height:26px;font-weight:700;">B</div>
                       </div>
                       <div class="flex-grow-1 d-flex flex-column">
-                        <div class="d-flex justify-content-between align-items-start">
+                        <div
+                          class="d-flex justify-content-between align-items-start">
                           <div>
                             <h5 class="small fw-semibold mb-0">Sobre Básico</h5>
                             <p class="xsmall text-muted mb-1">Entrada chill con dopamina.</p>
                           </div>
-                          <button type="button" class="btn btn-link p-0 xsmall text-muted pack-info-btn"
+                          <button type="button"
+                            class="btn btn-link p-0 xsmall text-muted pack-info-btn"
                             data-pack-id="basic">
                             <i class="bi bi-info-circle-fill"></i>
                           </button>
@@ -506,7 +523,9 @@
                             <i class="bi bi-coin text-warning small"></i>
                             <span class="small fw-semibold">60</span>
                           </div>
-                          <button class="btn btn-warning btn-sm fw-semibold rounded-pill pack-open-btn" data-pack-id="basic">
+                          <button
+                            class="btn btn-warning btn-sm fw-semibold rounded-pill pack-open-btn"
+                            data-pack-id="basic">
                             Abrir sobre
                           </button>
                         </div>
@@ -519,16 +538,22 @@
                 <div class="col-12 col-md-6 col-xl-3">
                   <article class="card tienda-pack-card h-100" data-pack-id="competitive">
                     <div class="card-body d-flex gap-3">
-                      <div class="flex-shrink-0 rounded-3 anim-pack-float d-flex align-items-center justify-content-center bg-secondary-subtle" style="width:64px;height:92px;">
-                        <div class="rounded-circle bg-white text-dark d-flex align-items-center justify-content-center" style="width:26px;height:26px;font-weight:700;">C</div>
+                      <div
+                        class="flex-shrink-0 rounded-3 anim-pack-float d-flex align-items-center justify-content-center bg-secondary-subtle"
+                        style="width:64px;height:92px;">
+                        <div
+                          class="rounded-circle bg-white text-dark d-flex align-items-center justify-content-center"
+                          style="width:26px;height:26px;font-weight:700;">C</div>
                       </div>
                       <div class="flex-grow-1 d-flex flex-column">
-                        <div class="d-flex justify-content-between align-items-start">
+                        <div
+                          class="d-flex justify-content-between align-items-start">
                           <div>
                             <h5 class="small fw-semibold mb-0">Sobre Competitivo</h5>
                             <p class="xsmall text-muted mb-1">Más raras y opción épica.</p>
                           </div>
-                          <button type="button" class="btn btn-link p-0 xsmall text-muted pack-info-btn"
+                          <button type="button"
+                            class="btn btn-link p-0 xsmall text-muted pack-info-btn"
                             data-pack-id="competitive">
                             <i class="bi bi-info-circle-fill"></i>
                           </button>
@@ -541,7 +566,9 @@
                             <i class="bi bi-coin text-warning small"></i>
                             <span class="small fw-semibold">180</span>
                           </div>
-                          <button class="btn btn-warning btn-sm fw-semibold rounded-pill pack-open-btn" data-pack-id="competitive">
+                          <button
+                            class="btn btn-warning btn-sm fw-semibold rounded-pill pack-open-btn"
+                            data-pack-id="competitive">
                             Abrir sobre
                           </button>
                         </div>
@@ -554,16 +581,22 @@
                 <div class="col-12 col-md-6 col-xl-3">
                   <article class="card tienda-pack-card h-100" data-pack-id="fire">
                     <div class="card-body d-flex gap-3">
-                      <div class="flex-shrink-0 rounded-3 anim-pack-float d-flex align-items-center justify-content-center bg-secondary-subtle" style="width:64px;height:92px;">
-                        <div class="rounded-circle bg-white text-dark d-flex align-items-center justify-content-center" style="width:26px;height:26px;font-weight:700;">F</div>
+                      <div
+                        class="flex-shrink-0 rounded-3 anim-pack-float d-flex align-items-center justify-content-center bg-secondary-subtle"
+                        style="width:64px;height:92px;">
+                        <div
+                          class="rounded-circle bg-white text-dark d-flex align-items-center justify-content-center"
+                          style="width:26px;height:26px;font-weight:700;">F</div>
                       </div>
                       <div class="flex-grow-1 d-flex flex-column">
-                        <div class="d-flex justify-content-between align-items-start">
+                        <div
+                          class="d-flex justify-content-between align-items-start">
                           <div>
                             <h5 class="small fw-semibold mb-0">Sobre Fuego</h5>
                             <p class="xsmall text-muted mb-1">Épicas y míticas en modo slot machine.</p>
                           </div>
-                          <button type="button" class="btn btn-link p-0 xsmall text-muted pack-info-btn"
+                          <button type="button"
+                            class="btn btn-link p-0 xsmall text-muted pack-info-btn"
                             data-pack-id="fire">
                             <i class="bi bi-info-circle-fill"></i>
                           </button>
@@ -576,7 +609,9 @@
                             <i class="bi bi-coin text-warning small"></i>
                             <span class="small fw-semibold">480</span>
                           </div>
-                          <button class="btn btn-warning btn-sm fw-semibold rounded-pill pack-open-btn" data-pack-id="fire">
+                          <button
+                            class="btn btn-warning btn-sm fw-semibold rounded-pill pack-open-btn"
+                            data-pack-id="fire">
                             Abrir sobre
                           </button>
                         </div>
@@ -589,16 +624,22 @@
                 <div class="col-12 col-md-6 col-xl-3">
                   <article class="card tienda-pack-card h-100" data-pack-id="grail">
                     <div class="card-body d-flex gap-3">
-                      <div class="flex-shrink-0 rounded-3 anim-pack-float d-flex align-items-center justify-content-center bg-secondary-subtle" style="width:64px;height:92px;">
-                        <div class="rounded-circle bg-white text-dark d-flex align-items-center justify-content-center" style="width:26px;height:26px;font-weight:700;">G</div>
+                      <div
+                        class="flex-shrink-0 rounded-3 anim-pack-float d-flex align-items-center justify-content-center bg-secondary-subtle"
+                        style="width:64px;height:92px;">
+                        <div
+                          class="rounded-circle bg-white text-dark d-flex align-items-center justify-content-center"
+                          style="width:26px;height:26px;font-weight:700;">G</div>
                       </div>
                       <div class="flex-grow-1 d-flex flex-column">
-                        <div class="d-flex justify-content-between align-items-start">
+                        <div
+                          class="d-flex justify-content-between align-items-start">
                           <div>
                             <h5 class="small fw-semibold mb-0">Sobre Grail</h5>
                             <p class="xsmall text-muted mb-1">Solo enfermos de la dopamina.</p>
                           </div>
-                          <button type="button" class="btn btn-link p-0 xsmall text-muted pack-info-btn"
+                          <button type="button"
+                            class="btn btn-link p-0 xsmall text-muted pack-info-btn"
                             data-pack-id="grail">
                             <i class="bi bi-info-circle-fill"></i>
                           </button>
@@ -611,7 +652,9 @@
                             <i class="bi bi-coin text-warning small"></i>
                             <span class="small fw-semibold">1200</span>
                           </div>
-                          <button class="btn btn-warning btn-sm fw-semibold rounded-pill pack-open-btn" data-pack-id="grail">
+                          <button
+                            class="btn btn-warning btn-sm fw-semibold rounded-pill pack-open-btn"
+                            data-pack-id="grail">
                             Abrir sobre
                           </button>
                         </div>
@@ -626,7 +669,7 @@
         </div>
       </section>
 
-      <p class="roulette-disclaimer text-center mt-4">
+      <p class="roulette-disclaimer text-center mt-4 xsmall text-muted">
         Probabilidades fijas por rareza, ruleta y tipo de sobre. Juega con cabeza y disfruta del vicio controlado.
       </p>
 
@@ -658,7 +701,8 @@
           <p class="small text-muted mb-0" id="rewardSetName"></p>
 
           <div class="mt-3 d-flex justify-content-center gap-2">
-            <button type="button" class="btn btn-outline-light btn-sm" data-bs-dismiss="modal" id="rewardContinueBtn">
+            <button type="button" class="btn btn-outline-light btn-sm" data-bs-dismiss="modal"
+              id="rewardContinueBtn">
               Seguir girando
             </button>
             <a href="Pages/Colección.html" class="btn btn-warning btn-sm" id="btnGoCollection">
@@ -778,7 +822,8 @@
           <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">
             Cerrar
           </button>
-          <a href="Pages/Colección.html" class="btn btn-warning btn-sm fw-semibold rounded-pill">
+          <a href="Pages/Colección.html"
+            class="btn btn-warning btn-sm fw-semibold rounded-pill">
             Ver colección
           </a>
         </div>
@@ -790,10 +835,9 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Script principal: tema, usuario, ruleta, tienda, sobres -->
+  <!-- (Exactamente el mismo que ya tienes, lo dejo tal cual para no romper nada) -->
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
-
-
       const defaultName = 'Entrenador';
       const defaultEmail = 'entrenador@pokemarket.com';
       const defaultAvatar = 'img/avatars/pokeball.png';
@@ -1163,6 +1207,7 @@
 
       let openPackModal = openPackModalEl ? new bootstrap.Modal(openPackModalEl) : null;
       let packInfoModal = packInfoModalEl ? new bootstrap.Modal(packInfoModalEl) : null;
+      let rewardModalInstance = rewardModalEl ? new bootstrap.Modal(rewardModalEl) : null;
 
       let balance = 0;
       let currentWheelKey = 'common';
@@ -1182,8 +1227,7 @@
         legendary: 0
       };
       let refreshDailyCost = 50;
-      let autoSpinQueueActive = false; // controla si estamos en modo autogiros
-      let rewardModalInstance = rewardModalEl ? new bootstrap.Modal(rewardModalEl) : null;
+      let autoSpinQueueActive = false;
 
       function updateRefreshCostUI() {
         if (refreshCostLabel) refreshCostLabel.textContent = refreshDailyCost.toString();
@@ -1294,7 +1338,6 @@
         const cfg = wheelsConfig[currentWheelKey];
         baseProbList.innerHTML = '';
         const entries = Object.entries(cfg.probs);
-
         entries.forEach(([key, p]) => {
           const rd = rarityDefs.find(r => r.key === key);
           if (!rd) return;
@@ -1423,7 +1466,7 @@
         const centerOffset = (visibleWidth / 2) - (itemWidth / 2);
 
         const targetIndex = Math.floor(totalItems / 2);
-        const targetX = - (targetIndex * itemWidth) + centerOffset;
+        const targetX = -(targetIndex * itemWidth) + centerOffset;
 
         const startX = targetX + totalWidth * 1.5;
 
@@ -1521,7 +1564,6 @@
           }
         }
 
-        // NO continuamos aquí los autogiros, solo marcamos que hay pendientes
         if (autoSpinsRemaining > 0) {
           autoSpinQueueActive = true;
         } else {
@@ -1587,8 +1629,6 @@
         });
       }
 
-      // Cuando cierras el modal de recompensa o pulsas "Seguir girando",
-      // si quedan autogiros pendientes, lanza el siguiente.
       if (rewardContinueBtn && rewardModalEl && rewardModalInstance) {
         rewardContinueBtn.addEventListener('click', () => {
           rewardModalInstance.hide();
@@ -1660,7 +1700,6 @@
       function showPackInfo(packId) {
         const cfg = packRarityProbs[packId];
         if (!cfg || !packInfoModal) return;
-
         if (packInfoTitleEl) {
           packInfoTitleEl.textContent = `Probabilidades – ${cfg.name}`;
         }
@@ -1940,7 +1979,6 @@
         });
       }
 
-      // Carga rápida inicial
       await loadAllCardsFromApi(5);
       fillStrip();
       if (btnSpin) btnSpin.disabled = false;
@@ -1953,7 +1991,6 @@
     `;
       }
 
-      // Carga extendida en background
       loadAllCardsFromApi(40).then(() => {
         fillStrip();
         generateDailyCards();
