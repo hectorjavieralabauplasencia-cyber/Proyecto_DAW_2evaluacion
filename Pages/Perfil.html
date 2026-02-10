@@ -956,11 +956,11 @@
         if (saleDetailMeta) {
           const basePrice = cardPriceText(sale);
           const owners = estimateOwners(sale);
-          saleDetailMeta.textContent = `Esta carta se estima en ${basePrice || '-'} y se calcula que hay ${owners} copias en manos de jugadores.`;
+          saleDetailMeta.textContent = Esta carta se estima en ${basePrice || '-'} y se calcula que hay ${owners} copias en manos de jugadores.;
         }
 
         if (saleDetailIndexInfo) {
-          saleDetailIndexInfo.textContent = `Carta ${index + 1} de ${sales.length} en tu lista de venta.`;
+          saleDetailIndexInfo.textContent = Carta ${index + 1} de ${sales.length} en tu lista de venta.;
         }
 
         saleDetailModalInstance.show();
@@ -1085,7 +1085,7 @@
           favDetailMeta.textContent = 'Carta marcada como favorita solo para ti. No afecta a la colección global, pero sirve como acceso rápido a tus grails.';
         }
         if (favDetailIndexInfo) {
-          favDetailIndexInfo.textContent = `Favorita ${index + 1} de ${favorites.length}.`;
+          favDetailIndexInfo.textContent = Favorita ${index + 1} de ${favorites.length}.;
         }
 
         favoriteDetailModalInstance.show();
@@ -1129,7 +1129,7 @@
         const filtered = filterCollection(saleSearchName?.value, saleSearchRarity?.value);
         saleCollectionGrid.innerHTML = '';
 
-        saleSelectorCount.textContent = `${filtered.length} resultados`;
+        saleSelectorCount.textContent = ${filtered.length} resultados;
 
         if (!filtered.length) {
           saleCollectionGrid.innerHTML = '<p class="xsmall text-muted mb-0">No se han encontrado cartas.</p>';
@@ -1189,7 +1189,7 @@
         const filtered = filterCollection(favoriteSearchName?.value, favoriteSearchRarity?.value);
         favoriteCollectionGrid.innerHTML = '';
 
-        favoriteSelectorCount.textContent = `${filtered.length} resultados`;
+        favoriteSelectorCount.textContent = ${filtered.length} resultados;
 
         if (!filtered.length) {
           favoriteCollectionGrid.innerHTML = '<p class="xsmall text-muted mb-0">No se han encontrado cartas.</p>';
@@ -1304,15 +1304,15 @@
       }
       if (btnShareWhatsApp) {
         btnShareWhatsApp.addEventListener('click', () => {
-          const text = encodeURIComponent(`Mira mi perfil en PokeMarket: ${currentProfileUrl}`);
-          window.open(`https://wa.me/?text=${text}`, '_blank');
+          const text = encodeURIComponent(Mira mi perfil en PokeMarket: ${currentProfileUrl});
+          window.open(https://wa.me/?text=${text}, '_blank');
         });
       }
       if (btnShareTwitter) {
         btnShareTwitter.addEventListener('click', () => {
           const text = encodeURIComponent('Mi perfil de PokeMarket');
           const url = encodeURIComponent(currentProfileUrl);
-          window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+          window.open(https://twitter.com/intent/tweet?text=${text}&url=${url}, '_blank');
         });
       }
 
