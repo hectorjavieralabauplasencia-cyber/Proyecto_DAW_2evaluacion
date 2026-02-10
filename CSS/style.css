@@ -688,3 +688,34 @@ html[data-bs-theme="dark"] .bg-pokeballs {
     transform: scale(1.1);
   }
 }
+.pegi-indicator {
+    position: static !important;
+    transform: none !important;
+    margin: 0 auto 0.75rem !important;
+    width: 45px !important;
+  }
+
+.pegi-indicator:hover {
+    transform: scale(1.08) !important;
+  }
+#pegiModal .modal-body {
+    padding: 1.5rem 1rem !important;
+  }
+
+ #pegiModal h4 {
+    font-size: 1.3rem;
+  }
+
+ #pegiModal p,
+  #pegiModal li {
+    font-size: 0.9rem !important;
+  }
+
+ #pegiModal .btn {
+    font-size: 0.95rem !important;
+    padding: 0.7rem 1rem !important;
+  }
+.pegi-indicator {
+    width: 40px !important;
+    margin-bottom: 0.5rem !important;
+  }
