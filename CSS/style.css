@@ -245,7 +245,7 @@ html[data-bs-theme="dark"] .bg-pokeballs {
 .card-detail-glow {
   position: absolute;
   inset: -20%;
-  background: radial-gradient(circle at 15% 0, rgba(250,204,21,0.35), transparent 60%);
+  background: radial-gradient(circle at 15% 0, rgba(250, 204, 21, 0.35), transparent 60%);
   opacity: 0.4;
   pointer-events: none;
 }
@@ -253,7 +253,7 @@ html[data-bs-theme="dark"] .bg-pokeballs {
 .card-detail-rays {
   position: absolute;
   inset: -40%;
-  background-image: conic-gradient(from 0deg, rgba(250,250,250,0) 0deg, rgba(250,250,250,0.28) 40deg, rgba(250,250,250,0) 80deg);
+  background-image: conic-gradient(from 0deg, rgba(250, 250, 250, 0) 0deg, rgba(250, 250, 250, 0.28) 40deg, rgba(250, 250, 250, 0) 80deg);
   opacity: 0.5;
   mix-blend-mode: screen;
   animation: detailRaysRotate 16s linear infinite;
@@ -261,8 +261,13 @@ html[data-bs-theme="dark"] .bg-pokeballs {
 }
 
 @keyframes detailRaysRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .card-detail-frame {
@@ -297,35 +302,35 @@ html[data-bs-theme="dark"] .bg-pokeballs {
 }
 
 .stats-bar-fill.rarity-common {
-  background: linear-gradient(90deg, rgba(156,163,175,0.5), rgba(229,231,235,0.9));
+  background: linear-gradient(90deg, rgba(156, 163, 175, 0.5), rgba(229, 231, 235, 0.9));
 }
 
 .stats-bar-fill.rarity-uncommon {
-  background: linear-gradient(90deg, rgba(34,197,94,0.5), rgba(74,222,128,0.9));
+  background: linear-gradient(90deg, rgba(34, 197, 94, 0.5), rgba(74, 222, 128, 0.9));
 }
 
 .stats-bar-fill.rarity-rare {
-  background: linear-gradient(90deg, rgba(59,130,246,0.6), rgba(129,140,248,0.95));
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.6), rgba(129, 140, 248, 0.95));
 }
 
 .stats-bar-fill.rarity-superrare {
-  background: linear-gradient(90deg, rgba(139,92,246,0.6), rgba(196,181,253,0.95));
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.6), rgba(196, 181, 253, 0.95));
 }
 
 .stats-bar-fill.rarity-elite {
-  background: linear-gradient(90deg, rgba(236,72,153,0.6), rgba(244,114,182,0.95));
+  background: linear-gradient(90deg, rgba(236, 72, 153, 0.6), rgba(244, 114, 182, 0.95));
 }
 
 .stats-bar-fill.rarity-epic {
-  background: linear-gradient(90deg, rgba(249,115,22,0.7), rgba(253,186,116,0.95));
+  background: linear-gradient(90deg, rgba(249, 115, 22, 0.7), rgba(253, 186, 116, 0.95));
 }
 
 .stats-bar-fill.rarity-mythic {
-  background: linear-gradient(90deg, rgba(250,204,21,0.7), rgba(254,240,138,0.98));
+  background: linear-gradient(90deg, rgba(250, 204, 21, 0.7), rgba(254, 240, 138, 0.98));
 }
 
 .stats-bar-fill.rarity-legendary {
-  background: linear-gradient(90deg, rgba(250,250,250,0.8), rgba(253,224,71,0.98));
+  background: linear-gradient(90deg, rgba(250, 250, 250, 0.8), rgba(253, 224, 71, 0.98));
 }
 
 .avatar-navbar {
@@ -352,7 +357,7 @@ html[data-bs-theme="dark"] .bg-pokeballs {
 }
 
 .roulette-choice-card-legendary {
-  background: linear-gradient(135deg, rgba(250,204,21,0.1), rgba(254,240,138,0.05));
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.1), rgba(254, 240, 138, 0.05));
 }
 
 .roulette-card {
@@ -378,14 +383,37 @@ html[data-bs-theme="dark"] .bg-pokeballs {
   display: inline-block;
 }
 
-.rarity-1 .rarity-color-dot { background: var(--rarity-common); }
-.rarity-2 .rarity-color-dot { background: var(--rarity-uncommon); }
-.rarity-3 .rarity-color-dot { background: var(--rarity-rare); }
-.rarity-4 .rarity-color-dot { background: var(--rarity-superrare); }
-.rarity-5 .rarity-color-dot { background: var(--rarity-elite); }
-.rarity-6 .rarity-color-dot { background: var(--rarity-epic); }
-.rarity-7 .rarity-color-dot { background: var(--rarity-mythic); }
-.rarity-8 .rarity-color-dot { background: var(--rarity-legendary); }
+.rarity-1 .rarity-color-dot {
+  background: var(--rarity-common);
+}
+
+.rarity-2 .rarity-color-dot {
+  background: var(--rarity-uncommon);
+}
+
+.rarity-3 .rarity-color-dot {
+  background: var(--rarity-rare);
+}
+
+.rarity-4 .rarity-color-dot {
+  background: var(--rarity-superrare);
+}
+
+.rarity-5 .rarity-color-dot {
+  background: var(--rarity-elite);
+}
+
+.rarity-6 .rarity-color-dot {
+  background: var(--rarity-epic);
+}
+
+.rarity-7 .rarity-color-dot {
+  background: var(--rarity-mythic);
+}
+
+.rarity-8 .rarity-color-dot {
+  background: var(--rarity-legendary);
+}
 
 .roulette-window-wrapper {
   position: relative;
@@ -454,7 +482,7 @@ html[data-bs-theme="dark"] .bg-pokeballs {
   left: 0;
   right: 0;
   height: 40px;
-  background: linear-gradient(to top, rgba(250,204,21,0.2), transparent);
+  background: linear-gradient(to top, rgba(250, 204, 21, 0.2), transparent);
   pointer-events: none;
 }
 
@@ -463,8 +491,15 @@ html[data-bs-theme="dark"] .bg-pokeballs {
 }
 
 @keyframes bounceFinal {
-  0%, 100% { transform: translateX(var(--roulette-offset, 0)); }
-  50% { transform: translateX(calc(var(--roulette-offset, 0) + 8px)); }
+
+  0%,
+  100% {
+    transform: translateX(var(--roulette-offset, 0));
+  }
+
+  50% {
+    transform: translateX(calc(var(--roulette-offset, 0) + 8px));
+  }
 }
 
 .carta-img-placeholder {
@@ -497,14 +532,37 @@ html[data-bs-theme="dark"] .bg-pokeballs {
   transition: width 0.3s ease;
 }
 
-.stats-bar-fill.rarity-common { background: linear-gradient(90deg, rgba(156,163,175,0.5), rgba(229,231,235,0.9)); }
-.stats-bar-fill.rarity-uncommon { background: linear-gradient(90deg, rgba(34,197,94,0.5), rgba(74,222,128,0.9)); }
-.stats-bar-fill.rarity-rare { background: linear-gradient(90deg, rgba(59,130,246,0.6), rgba(129,140,248,0.95)); }
-.stats-bar-fill.rarity-superrare { background: linear-gradient(90deg, rgba(139,92,246,0.6), rgba(196,181,253,0.95)); }
-.stats-bar-fill.rarity-elite { background: linear-gradient(90deg, rgba(236,72,153,0.6), rgba(244,114,182,0.95)); }
-.stats-bar-fill.rarity-epic { background: linear-gradient(90deg, rgba(249,115,22,0.7), rgba(253,186,116,0.95)); }
-.stats-bar-fill.rarity-mythic { background: linear-gradient(90deg, rgba(250,204,21,0.7), rgba(254,240,138,0.98)); }
-.stats-bar-fill.rarity-legendary { background: linear-gradient(90deg, rgba(250,250,250,0.8), rgba(253,224,71,0.98)); }
+.stats-bar-fill.rarity-common {
+  background: linear-gradient(90deg, rgba(156, 163, 175, 0.5), rgba(229, 231, 235, 0.9));
+}
+
+.stats-bar-fill.rarity-uncommon {
+  background: linear-gradient(90deg, rgba(34, 197, 94, 0.5), rgba(74, 222, 128, 0.9));
+}
+
+.stats-bar-fill.rarity-rare {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.6), rgba(129, 140, 248, 0.95));
+}
+
+.stats-bar-fill.rarity-superrare {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.6), rgba(196, 181, 253, 0.95));
+}
+
+.stats-bar-fill.rarity-elite {
+  background: linear-gradient(90deg, rgba(236, 72, 153, 0.6), rgba(244, 114, 182, 0.95));
+}
+
+.stats-bar-fill.rarity-epic {
+  background: linear-gradient(90deg, rgba(249, 115, 22, 0.7), rgba(253, 186, 116, 0.95));
+}
+
+.stats-bar-fill.rarity-mythic {
+  background: linear-gradient(90deg, rgba(250, 204, 21, 0.7), rgba(254, 240, 138, 0.98));
+}
+
+.stats-bar-fill.rarity-legendary {
+  background: linear-gradient(90deg, rgba(250, 250, 250, 0.8), rgba(253, 224, 71, 0.98));
+}
 
 .tienda-pack-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -522,8 +580,15 @@ html[data-bs-theme="dark"] .bg-pokeballs {
 }
 
 @keyframes packFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
 .reward-modal-content {
@@ -536,7 +601,7 @@ html[data-bs-theme="dark"] .bg-pokeballs {
 .reward-glow {
   position: absolute;
   inset: -20%;
-  background: radial-gradient(circle at 15% 0, rgba(250,204,21,0.35), transparent 60%);
+  background: radial-gradient(circle at 15% 0, rgba(250, 204, 21, 0.35), transparent 60%);
   opacity: 0.4;
   pointer-events: none;
 }
@@ -544,7 +609,7 @@ html[data-bs-theme="dark"] .bg-pokeballs {
 .reward-rays {
   position: absolute;
   inset: -40%;
-  background-image: conic-gradient(from 0deg, rgba(250,250,250,0) 0deg, rgba(250,250,250,0.28) 40deg, rgba(250,250,250,0) 80deg);
+  background-image: conic-gradient(from 0deg, rgba(250, 250, 250, 0) 0deg, rgba(250, 250, 250, 0.28) 40deg, rgba(250, 250, 250, 0) 80deg);
   opacity: 0.5;
   mix-blend-mode: screen;
   animation: rewardRaysRotate 16s linear infinite;
@@ -552,8 +617,13 @@ html[data-bs-theme="dark"] .bg-pokeballs {
 }
 
 @keyframes rewardRaysRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .reward-card-wrapper {
@@ -596,18 +666,48 @@ html[data-bs-theme="dark"] .bg-pokeballs {
 }
 
 @keyframes cardReveal {
-  0% { transform: scale(0.5) rotateY(90deg); opacity: 0; }
-  100% { transform: scale(1) rotateY(0); opacity: 1; }
+  0% {
+    transform: scale(0.5) rotateY(90deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) rotateY(0);
+    opacity: 1;
+  }
 }
 
-.pack-reveal-card-inner.rarity-common { border-color: var(--rarity-common); }
-.pack-reveal-card-inner.rarity-uncommon { border-color: var(--rarity-uncommon); }
-.pack-reveal-card-inner.rarity-rare { border-color: var(--rarity-rare); }
-.pack-reveal-card-inner.rarity-superrare { border-color: var(--rarity-superrare); }
-.pack-reveal-card-inner.rarity-elite { border-color: var(--rarity-elite); }
-.pack-reveal-card-inner.rarity-epic { border-color: var(--rarity-epic); }
-.pack-reveal-card-inner.rarity-mythic { border-color: var(--rarity-mythic); }
-.pack-reveal-card-inner.rarity-legendary { border-color: var(--rarity-legendary); }
+.pack-reveal-card-inner.rarity-common {
+  border-color: var(--rarity-common);
+}
+
+.pack-reveal-card-inner.rarity-uncommon {
+  border-color: var(--rarity-uncommon);
+}
+
+.pack-reveal-card-inner.rarity-rare {
+  border-color: var(--rarity-rare);
+}
+
+.pack-reveal-card-inner.rarity-superrare {
+  border-color: var(--rarity-superrare);
+}
+
+.pack-reveal-card-inner.rarity-elite {
+  border-color: var(--rarity-elite);
+}
+
+.pack-reveal-card-inner.rarity-epic {
+  border-color: var(--rarity-epic);
+}
+
+.pack-reveal-card-inner.rarity-mythic {
+  border-color: var(--rarity-mythic);
+}
+
+.pack-reveal-card-inner.rarity-legendary {
+  border-color: var(--rarity-legendary);
+}
 
 .card-perfil-venta {
   box-shadow: 0 4px 12px rgba(15, 23, 42, 0.3);
@@ -652,6 +752,7 @@ html[data-bs-theme="dark"] .bg-pokeballs {
 .card-carta-frame.ratio {
   aspect-ratio: 3 / 4;
 }
+
 .pegi-indicator {
   position: absolute;
   top: 50%;
@@ -688,34 +789,22 @@ html[data-bs-theme="dark"] .bg-pokeballs {
     transform: scale(1.1);
   }
 }
-.pegi-indicator {
-    position: static !important;
-    transform: none !important;
-    margin: 0 auto 0.75rem !important;
-    width: 45px !important;
-  }
 
-.pegi-indicator:hover {
-    transform: scale(1.08) !important;
-  }
+/* Modal specific styles */
 #pegiModal .modal-body {
-    padding: 1.5rem 1rem !important;
-  }
+  padding: 1.5rem 1rem !important;
+}
 
- #pegiModal h4 {
-    font-size: 1.3rem;
-  }
+#pegiModal h4 {
+  font-size: 1.3rem;
+}
 
- #pegiModal p,
-  #pegiModal li {
-    font-size: 0.9rem !important;
-  }
+#pegiModal p,
+#pegiModal li {
+  font-size: 0.9rem !important;
+}
 
- #pegiModal .btn {
-    font-size: 0.95rem !important;
-    padding: 0.7rem 1rem !important;
-  }
-.pegi-indicator {
-    width: 40px !important;
-    margin-bottom: 0.5rem !important;
-  }
+#pegiModal .btn {
+  font-size: 0.95rem !important;
+  padding: 0.7rem 1rem !important;
+}
