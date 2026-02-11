@@ -1108,6 +1108,22 @@
               setName: card.set?.name || ''
             };
 
+            // Filtrado: descartar cartas inválidas (sin id/nombre/imagen) o que no parezcan de Pokémon
+            if (!mapped.id || !mapped.name || !mapped.imageUrl) {
+              console.warn('Skipping invalid card (missing id/name/image):', mapped);
+              return;
+            }
+
+            const setNameLower = (mapped.setName || '').toLowerCase();
+            const nameLower = (mapped.name || '').toLowerCase();
+            // Heurística: aceptar si el set o el nombre mencionan 'pokemon' o motivos típicos de cartas Pokémon
+            const isPokemon = /pokemon/i.test(setNameLower) || /pokemon/i.test(nameLower) || /\b(pikachu|charizard|mew|bulbasaur|squirtle|eevee)\b/i.test(nameLower);
+
+            if (!isPokemon) {
+              console.warn('Skipping non-Pokémon card:', mapped.name, 'set:', mapped.setName);
+              return;
+            }
+
             const internalRarity = mapApiRarityToInternal(mapped);
             if (!cardsByRarity[internalRarity]) return;
 
@@ -1117,8 +1133,8 @@
               image: mapped.imageUrl || '',
               apiRarity: mapped.apiRarity || '',
               setName: mapped.setName || '',
-              types: [],
-              holographic: false,
+              types: card.types || [],
+              holographic: !!card.holo || false,
               priceEur: mapped.priceEur ?? null,
               priceUsd: null
             });
